@@ -14,14 +14,14 @@
     return;
   }
 
-  // Staggered reveal timing (ms)
-  const delays = [300, 800, 1200, 1700, 2100, 2600, 3000, 3400, 3900, 4300, 4700];
+  // Staggered reveal timing (ms) — spaced so visitors can read each line
+  const delays = [400, 1200, 2200, 3100, 4000, 5200, 6200, 7400, 8600];
 
   lines.forEach((line, i) => {
-    setTimeout(() => line.classList.add('visible'), delays[i] ?? i * 450);
+    setTimeout(() => line.classList.add('visible'), delays[i] ?? i * 900);
   });
 
-  const totalDuration = (delays[lines.length - 1] ?? 5000) + 1400;
+  const totalDuration = (delays[lines.length - 1] ?? 8000) + 2200;
   let dismissTimer = setTimeout(dismiss, totalDuration);
 
   function dismiss() {
