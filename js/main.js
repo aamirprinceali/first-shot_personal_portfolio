@@ -1,14 +1,14 @@
 /**
- * main.js — Scroll progress, reveal animations, nav, stats counter, keyboard nav
+ * main.js — Scroll progress, reveal animations, nav, expertise tags, keyboard nav
  */
 
 // ─── Scroll Progress Bar ──────────────────────────────
 const progressBar = document.getElementById('scroll-progress');
 
 function updateProgress() {
-  const scrollTop    = window.scrollY;
-  const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
-  const pct          = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  const scrollTop  = window.scrollY;
+  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+  const pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   if (progressBar) progressBar.style.width = pct + '%';
 }
 
@@ -17,55 +17,45 @@ const nav = document.getElementById('nav');
 
 function updateNav() {
   if (!nav) return;
-  if (window.scrollY > 60) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
+  nav.classList.toggle('scrolled', window.scrollY > 60);
 }
 
 // ─── Reveal on Scroll ─────────────────────────────────
 const revealEls = document.querySelectorAll('.reveal');
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('revealed');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
-revealEls.forEach((el) => observer.observe(el));
+revealEls.forEach((el) => revealObserver.observe(el));
 
-// ─── Stats Counter ────────────────────────────────────
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const duration = 1800;
-  const start = performance.now();
+// ─── Expertise Tags — Staggered Cascade ──────────────
+// Tags slide up + fade in one by one when section scrolls into view.
+// A brief border shimmer plays as each tag appears.
+const expertiseTags    = document.querySelectorAll('.exp-tag');
+const expertiseWrapper = document.getElementById('expertise-tags');
 
-  function step(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target) + (el.dataset.suffix || '');
-    if (progress < 1) requestAnimationFrame(step);
-  }
+if (expertiseWrapper && expertiseTags.length) {
+  const tagObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        expertiseTags.forEach((tag, i) => {
+          setTimeout(() => {
+            tag.classList.add('visible');
+          }, i * 90);
+        });
+        tagObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
 
-  requestAnimationFrame(step);
+  tagObserver.observe(expertiseWrapper);
 }
-
-const statObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      statObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-target]').forEach((el) => statObserver.observe(el));
 
 // ─── Scroll Event ─────────────────────────────────────
 window.addEventListener('scroll', () => {
@@ -73,7 +63,6 @@ window.addEventListener('scroll', () => {
   updateNav();
 }, { passive: true });
 
-// Init
 updateProgress();
 updateNav();
 
@@ -81,13 +70,10 @@ updateNav();
 const sections = ['hero', 'about', 'tools', 'projects', 'contact'];
 
 document.addEventListener('keydown', (e) => {
-  // Don't hijack when typing in form fields
   if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-
   const num = parseInt(e.key, 10);
   if (num >= 1 && num <= sections.length) {
-    const target = document.getElementById(sections[num - 1]);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sections[num - 1])?.scrollIntoView({ behavior: 'smooth' });
   }
 });
 
@@ -97,28 +83,20 @@ const navLinks  = document.querySelector('.nav-links');
 
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    // Animate hamburger
+    const open  = navLinks.classList.toggle('open');
     const spans = hamburger.querySelectorAll('span');
-    if (navLinks.classList.contains('open')) {
-      spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-    } else {
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
-    }
+    spans[0].style.transform = open ? 'translateY(6.5px) rotate(45deg)' : '';
+    spans[1].style.opacity   = open ? '0' : '';
+    spans[2].style.transform = open ? 'translateY(-6.5px) rotate(-45deg)' : '';
   });
 
-  // Close on nav link click
   navLinks.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => {
       navLinks.classList.remove('open');
-      const spans = hamburger.querySelectorAll('span');
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+      hamburger.querySelectorAll('span').forEach(s => {
+        s.style.transform = '';
+        s.style.opacity   = '';
+      });
     });
   });
 }
@@ -137,13 +115,13 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('.btn-primary');
+    const btn      = contactForm.querySelector('.btn-primary');
     const original = btn.textContent;
     btn.textContent = 'Message sent ✓';
-    btn.disabled = true;
+    btn.disabled    = true;
     setTimeout(() => {
       btn.textContent = original;
-      btn.disabled = false;
+      btn.disabled    = false;
       contactForm.reset();
     }, 3000);
   });

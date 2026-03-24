@@ -4,21 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV — Aamir Ali</title>
-  <meta name="description" content="Curriculum vitae of Aamir Ali — AI Operations Strategist." />
+  <meta name="description" content="Curriculum vitae of Aamir Ali — Enrollment Operations Manager with a background in healthcare, recovery, and AI-enhanced workflows." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
 
   <style>
-    /* CV-specific overrides */
     .cv-page {
       min-height: 100vh;
       padding-top: 100px;
@@ -37,23 +34,31 @@
     .cv-name {
       font-size: clamp(40px, 6vw, 64px);
       font-weight: 800;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
       line-height: 1.0;
       color: var(--text-primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .cv-role {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-secondary);
       margin-bottom: 6px;
+      font-weight: 500;
     }
 
     .cv-location {
       font-family: var(--font-mono);
       font-size: 12px;
       color: var(--text-muted);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
+    }
+
+    .cv-header-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .cv-contact-block {
@@ -66,43 +71,34 @@
 
     .cv-contact-block a,
     .cv-contact-block span {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-secondary);
       display: block;
       transition: color var(--transition-fast);
     }
 
-    .cv-contact-block a:hover {
-      color: var(--text-primary);
-    }
+    .cv-contact-block a:hover { color: var(--text-primary); }
 
     .cv-body {
       display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 64px;
+      grid-template-columns: 1fr 260px;
+      gap: 60px;
       align-items: start;
     }
 
-    /* Section */
-    .cv-section {
-      margin-bottom: 52px;
-    }
+    .cv-section { margin-bottom: 52px; }
 
     .cv-section-title {
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
+      font-size: 10px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 24px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
-    /* Experience item */
     .cv-item {
       margin-bottom: 32px;
       padding-bottom: 32px;
@@ -119,7 +115,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       flex-wrap: wrap;
       gap: 8px;
     }
@@ -135,7 +131,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--text-muted);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       flex-shrink: 0;
     }
 
@@ -143,32 +139,19 @@
       font-size: 13px;
       font-weight: 500;
       color: var(--text-secondary);
-      margin-bottom: 12px;
-    }
-
-    .cv-item-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.7;
       margin-bottom: 14px;
-    }
-
-    /* ✏️  PLACEHOLDER text is wrapped in these spans */
-    .cv-placeholder {
-      color: var(--text-muted);
-      font-style: italic;
     }
 
     .cv-bullets {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
     }
 
     .cv-bullet {
       font-size: 14px;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.65;
       padding-left: 18px;
       position: relative;
     }
@@ -180,23 +163,27 @@
       color: var(--text-muted);
     }
 
-    /* Skills sidebar */
+    .cv-summary {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Sidebar */
     .cv-sidebar {
       position: sticky;
       top: 100px;
     }
 
-    .cv-skill-group {
-      margin-bottom: 32px;
-    }
+    .cv-skill-group { margin-bottom: 30px; }
 
     .cv-skill-group-title {
       font-family: var(--font-mono);
       font-size: 10px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .cv-skill-tags {
@@ -220,7 +207,7 @@
       color: var(--text-primary);
     }
 
-    /* Print button */
+    /* Print */
     .cv-print-btn {
       display: inline-flex;
       align-items: center;
@@ -229,10 +216,9 @@
       font-weight: 500;
       color: var(--text-secondary);
       border: 1px solid var(--border);
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: var(--radius-sm);
       transition: all var(--transition-base);
-      margin-top: 8px;
     }
 
     .cv-print-btn:hover {
@@ -241,66 +227,43 @@
     }
 
     @media (max-width: 900px) {
-      .cv-body {
-        grid-template-columns: 1fr;
-      }
-
-      .cv-sidebar {
-        position: static;
-        border-top: 1px solid var(--border);
-        padding-top: 48px;
-      }
-
-      .cv-contact-block {
-        text-align: left;
-      }
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-sidebar { position: static; border-top: 1px solid var(--border); padding-top: 48px; }
+      .cv-contact-block { text-align: left; }
     }
 
     @media print {
-      #nav, #cursor-dot, #cursor-ring, #grain, #scroll-progress,
-      #keyboard-hint, .cv-back-link, .cv-print-btn {
-        display: none !important;
-      }
-
-      body {
-        background: white;
-        color: black;
-        cursor: default;
-      }
-
-      .cv-page {
-        padding-top: 32px;
-      }
+      #nav, #cursor-dot, #cursor-ring, #grain, #scroll-progress, #keyboard-hint { display: none !important; }
+      body { background: white; color: black; cursor: default; }
+      .cv-page { padding-top: 32px; }
+      .cv-print-btn { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Scroll progress -->
   <div id="scroll-progress"></div>
   <div id="grain" aria-hidden="true"></div>
   <div id="cursor-dot"  aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
 
-  <!-- Navigation -->
   <nav id="nav">
     <a href="index.html" class="nav-logo">AA</a>
     <div class="nav-links">
       <a href="index.html#about">About</a>
-      <a href="index.html#tools">AI Tools</a>
+      <a href="index.html#tools">Automation</a>
       <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="work-with-me.html">Work With Me</a>
     </div>
-    <a href="index.html#contact" class="nav-badge">
+    <a href="work-with-me.html" class="nav-badge">
       <span class="pulse-dot"></span>
-      Open to opportunities
+      Open to Collaborate
     </a>
     <button class="nav-hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- ─── CV Page ──────────────────────────────────── -->
   <main class="cv-page">
     <div class="container">
 
@@ -308,37 +271,36 @@
       <div class="cv-header reveal">
         <div>
           <h1 class="cv-name">Aamir Ali</h1>
-          <div class="cv-role">AI Operations Strategist · Healthcare Operations · Project Management</div>
-          <div class="cv-location">Dallas, TX · Open to Remote</div>
-          <a href="index.html" class="cv-print-btn" style="margin-top: 20px; display: inline-flex;">← Back to Portfolio</a>
-          <button onclick="window.print()" class="cv-print-btn">⎙ Print / Save PDF</button>
+          <div class="cv-role">Enrollment Operations Manager · Healthcare · AI & Automation</div>
+          <div class="cv-location">Plano, TX · Open to Remote Opportunities</div>
+          <div class="cv-header-actions">
+            <a href="index.html" class="cv-print-btn">← Portfolio</a>
+            <button onclick="window.print()" class="cv-print-btn">⎙ Save as PDF</button>
+          </div>
         </div>
         <div class="cv-contact-block">
           <a href="mailto:aamirali1211@gmail.com">aamirali1211@gmail.com</a>
           <a href="tel:+19722144380">(972) 214-4380</a>
-          <!-- ✏️  Add LinkedIn / GitHub URLs below -->
-          <!-- <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a> -->
+          <a href="https://linkedin.com/in/aamirnali" target="_blank" rel="noopener">linkedin.com/in/aamirnali</a>
+          <a href="https://github.com/aamirprinceali" target="_blank" rel="noopener">github.com/aamirprinceali</a>
+          <span>Discord: prince_aamir</span>
         </div>
       </div>
 
       <div class="cv-body">
-
-        <!-- Main column -->
         <div class="cv-main">
 
           <!-- Summary -->
           <div class="cv-section reveal">
             <div class="cv-section-title">Summary</div>
-            <!-- ✏️  PLACEHOLDER: Replace with your own summary -->
-            <p class="cv-item-desc">
-              <span class="cv-placeholder">
-                [Replace with your professional summary — 2–3 sentences capturing your background,
-                what you're focused on now, and what makes you uniquely effective. Example:
-                "Operations leader with 5+ years in healthcare and high-growth startups.
-                I build the systems that let teams scale — and increasingly, I use AI to
-                make those systems smarter. Currently pursuing project management roles
-                where I can combine operational discipline with AI-first tooling."]
-              </span>
+            <p class="cv-summary">
+              Dynamic and results-oriented professional with progressive experience in enrollment
+              operations, team leadership, and process optimization across behavioral health and
+              wellness organizations. Proven ability to build scalable workflows, lead cross-functional
+              teams, and drive measurable outcomes through strategic planning, data-driven
+              decision-making, and stakeholder management. Adept at translating organizational goals
+              into efficient systems that improve engagement, compliance, and performance — and
+              increasingly using AI and automation tools to accelerate that work.
             </p>
           </div>
 
@@ -346,64 +308,79 @@
           <div class="cv-section reveal reveal-delay-1">
             <div class="cv-section-title">Experience</div>
 
-            <!-- ✏️  PLACEHOLDER ROLE 1 — Replace with your most recent role -->
             <div class="cv-item">
               <div class="cv-item-header">
-                <div class="cv-item-title">
-                  <span class="cv-placeholder">[Your Most Recent Job Title]</span>
-                </div>
-                <div class="cv-item-date">
-                  <span class="cv-placeholder">Month Year – Present</span>
-                </div>
+                <div class="cv-item-title">Enrollment Operations Manager</div>
+                <div class="cv-item-date">October 2025 – Present</div>
               </div>
-              <div class="cv-item-company">
-                <span class="cv-placeholder">[Company Name] · Healthcare / Startup</span>
-              </div>
+              <div class="cv-item-company">HelloHero · Remote</div>
               <div class="cv-bullets">
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #1 — quantify where possible, e.g. "Reduced patient intake time by 40% by redesigning triage workflow."]</div>
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #2]</div>
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #3]</div>
+                <div class="cv-bullet">Own end-to-end enrollment operations from referral intake through handoff to clinical services, ensuring accountability, consistent conversion, and seamless family experiences across all enrollment pathways.</div>
+                <div class="cv-bullet">Lead, train, and support a team of Enrollment Coordinators, Care Coordinators, and Admissions staff; establish workflows, performance standards, and SLAs that drive enrollment throughput and team accountability.</div>
+                <div class="cv-bullet">Design and implement SOPs, escalation paths, and multi-channel outreach processes (email, SMS, voicemail, call scripting) to improve family engagement, consistency, and operational efficiency across districts.</div>
+                <div class="cv-bullet">Serve as primary point of contact for school district partners; review referral progress, scheduling metrics, and enrollment data to identify bottlenecks and drive continuous process improvements.</div>
               </div>
             </div>
 
-            <!-- ✏️  PLACEHOLDER ROLE 2 -->
             <div class="cv-item">
               <div class="cv-item-header">
-                <div class="cv-item-title">
-                  <span class="cv-placeholder">[Previous Job Title]</span>
-                </div>
-                <div class="cv-item-date">
-                  <span class="cv-placeholder">Month Year – Month Year</span>
-                </div>
+                <div class="cv-item-title">Enrollment Advisor</div>
+                <div class="cv-item-date">April 2025 – October 2025</div>
               </div>
-              <div class="cv-item-company">
-                <span class="cv-placeholder">[Company Name] · Startup</span>
-              </div>
+              <div class="cv-item-company">Hazel Health · Remote</div>
               <div class="cv-bullets">
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #1]</div>
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #2]</div>
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #3]</div>
+                <div class="cv-bullet">Promoted to lead high-volume outbound outreach, converting school and parent referrals into scheduled therapy intakes using strategic communication cadences and structured workflow tracking.</div>
+                <div class="cv-bullet">Conducted 50–75 outbound enrollment calls daily, consistently ranked at the top of a team of 25+ for conversion rate while maintaining a 100% quality audit score.</div>
+                <div class="cv-bullet">Used consultative techniques to build rapport with families, overcome objections, and clearly convey the value of behavioral health services to drive enrollment decisions.</div>
+                <div class="cv-bullet">Built authentic rapport with hesitant and under-resourced families, addressing cultural, language, and logistical barriers to enrollment with personalized follow-through and a client-first approach.</div>
+                <div class="cv-bullet">Leveraged CRM tools to track enrollment step completion, monitor outreach progress, and document all call activity for accurate follow-up and scheduling coordination.</div>
               </div>
             </div>
 
-            <!-- ✏️  PLACEHOLDER ROLE 3 — Add as many as needed -->
             <div class="cv-item">
               <div class="cv-item-header">
-                <div class="cv-item-title">
-                  <span class="cv-placeholder">[Earlier Job Title]</span>
-                </div>
-                <div class="cv-item-date">
-                  <span class="cv-placeholder">Month Year – Month Year</span>
-                </div>
+                <div class="cv-item-title">Enrollment Coordinator</div>
+                <div class="cv-item-date">March 2024 – April 2025</div>
               </div>
-              <div class="cv-item-company">
-                <span class="cv-placeholder">[Company Name]</span>
-              </div>
+              <div class="cv-item-company">Hazel Health · Remote</div>
               <div class="cv-bullets">
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #1]</div>
-                <div class="cv-bullet cv-placeholder">[Key achievement or responsibility #2]</div>
+                <div class="cv-bullet">Handled high-volume inbound and scheduled calls, guiding families through the full enrollment process with empathy, clarity, professionalism, and attention to individual needs.</div>
+                <div class="cv-bullet">Led testing pilots for new enrollment tools, working cross-functionally with the product and operations teams to provide structured feedback that drove process and system improvements.</div>
+                <div class="cv-bullet">Managed follow-ups, reschedules, and monitored enrollment step completion to ensure families were fully prepared for intake scheduling and service onboarding.</div>
+                <div class="cv-bullet">Adapted to evolving workflows and scripts within a fast-paced startup environment, contributing to process improvements that enhanced team efficiency and reduced cycle times.</div>
+                <div class="cv-bullet">Informally mentored newer team members on enrollment best practices, objection-handling, and CRM workflows, contributing to stronger team-wide performance.</div>
               </div>
             </div>
+
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <div class="cv-item-title">Admissions Coordinator</div>
+                <div class="cv-item-date">April 2023 – February 2024</div>
+              </div>
+              <div class="cv-item-company">Lighthouse Recovery · Dallas, TX</div>
+              <div class="cv-bullets">
+                <div class="cv-bullet">Guided individuals and families through the admissions process for sober living and outpatient programs (PHP/IOP), providing compassionate support and clear guidance at a critical and often urgent moment.</div>
+                <div class="cv-bullet">Handled incoming inquiries and converted interest into enrollment through relationship-building, thorough needs assessments, and clear program explanation tailored to each client.</div>
+                <div class="cv-bullet">Conducted pre-admission screenings and intake assessments to determine eligibility and match clients to the appropriate level of care, balancing efficiency with sensitivity.</div>
+                <div class="cv-bullet">Coordinated with clinical, housing, and insurance teams to facilitate efficient, client-centered transitions from inquiry to admission, minimizing delays for clients in active need.</div>
+                <div class="cv-bullet">Maintained accurate and confidential client records in compliance with HIPAA and program standards, managing a steady pipeline of inquiries across multiple tracks of care.</div>
+              </div>
+            </div>
+
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <div class="cv-item-title">House Manager / Case Manager</div>
+                <div class="cv-item-date">June 2020 – May 2023</div>
+              </div>
+              <div class="cv-item-company">Lighthouse Recovery · Dallas, TX</div>
+              <div class="cv-bullets">
+                <div class="cv-bullet">Delivered individualized case management to residents, helping them set and track recovery, employment, and life goals while maintaining accountability to program expectations.</div>
+                <div class="cv-bullet">Oversaw daily operations in a sober living facility, including medication schedules, resident accountability, recovery routines, and compliance with facility standards and safety protocols.</div>
+                <div class="cv-bullet">Navigated high-pressure situations requiring time management, multitasking, and conflict resolution while maintaining a supportive and structured environment for all residents.</div>
+                <div class="cv-bullet">Coordinated care plans with clinical staff, counselors, and external providers to ensure holistic support and successful program completion for each client.</div>
+              </div>
+            </div>
+
           </div>
 
           <!-- Education -->
@@ -412,50 +389,20 @@
 
             <div class="cv-item">
               <div class="cv-item-header">
-                <div class="cv-item-title">
-                  <span class="cv-placeholder">[Degree — e.g. B.S. Business Administration]</span>
-                </div>
-                <div class="cv-item-date">
-                  <span class="cv-placeholder">Year</span>
-                </div>
+                <div class="cv-item-title">B.S. Neuroscience</div>
+                <div class="cv-item-date">2011 – 2016</div>
               </div>
-              <div class="cv-item-company">
-                <span class="cv-placeholder">[University Name]</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Certifications -->
-          <div class="cv-section reveal reveal-delay-3">
-            <div class="cv-section-title">Certifications &amp; Courses</div>
-
-            <div class="cv-item">
-              <div class="cv-item-header">
-                <div class="cv-item-title">
-                  <span class="cv-placeholder">[Certification Name — e.g. PMP, Google PM Certificate]</span>
-                </div>
-                <div class="cv-item-date">
-                  <span class="cv-placeholder">Year</span>
-                </div>
-              </div>
-              <div class="cv-item-company">
-                <span class="cv-placeholder">[Issuing Organization]</span>
-              </div>
+              <div class="cv-item-company">University of Texas at Dallas</div>
             </div>
 
             <div class="cv-item">
               <div class="cv-item-header">
-                <div class="cv-item-title">
-                  <span class="cv-placeholder">[Add more certifications as you earn them]</span>
-                </div>
-                <div class="cv-item-date">
-                  <span class="cv-placeholder">Year</span>
-                </div>
+                <div class="cv-item-title">A.S. General Studies</div>
+                <div class="cv-item-date">2009 – 2011</div>
               </div>
-              <div class="cv-item-company">
-                <span class="cv-placeholder">[Issuing Organization]</span>
-              </div>
+              <div class="cv-item-company">Collin College</div>
             </div>
+
           </div>
 
         </div>
@@ -467,74 +414,92 @@
             <div class="cv-skill-group-title">Core Skills</div>
             <div class="cv-skill-tags">
               <span class="cv-skill-tag">Operations Management</span>
-              <span class="cv-skill-tag">Project Management</span>
-              <span class="cv-skill-tag">Customer Success</span>
-              <span class="cv-skill-tag">Process Improvement</span>
-              <span class="cv-skill-tag">Healthcare Operations</span>
-              <span class="cv-skill-tag">Cross-functional Collaboration</span>
-              <span class="cv-skill-tag">Stakeholder Management</span>
+              <span class="cv-skill-tag">Team Leadership</span>
+              <span class="cv-skill-tag">SOP Design</span>
+              <span class="cv-skill-tag">Process Optimization</span>
+              <span class="cv-skill-tag">Stakeholder Relations</span>
+              <span class="cv-skill-tag">KPI Tracking</span>
+              <span class="cv-skill-tag">Multi-Channel Outreach</span>
+              <span class="cv-skill-tag">Cross-Functional Collab</span>
               <span class="cv-skill-tag">Data Analysis</span>
+              <span class="cv-skill-tag">Training & Onboarding</span>
+              <span class="cv-skill-tag">Change Management</span>
+              <span class="cv-skill-tag">Case Management</span>
+              <span class="cv-skill-tag">Conflict Resolution</span>
+              <span class="cv-skill-tag">Customer Success</span>
             </div>
           </div>
 
           <div class="cv-skill-group">
-            <div class="cv-skill-group-title">AI Tools</div>
+            <div class="cv-skill-group-title">AI & Automation</div>
             <div class="cv-skill-tags">
               <span class="cv-skill-tag">ChatGPT</span>
               <span class="cv-skill-tag">Claude</span>
-              <span class="cv-skill-tag">Notion AI</span>
-              <span class="cv-skill-tag">Make / Zapier</span>
-              <span class="cv-skill-tag">Cursor</span>
-              <span class="cv-skill-tag">Perplexity AI</span>
-              <span class="cv-skill-tag">Midjourney</span>
+              <span class="cv-skill-tag">Gemini</span>
+              <span class="cv-skill-tag">n8n</span>
+              <span class="cv-skill-tag">Blotato</span>
+              <span class="cv-skill-tag">Gamma</span>
+              <span class="cv-skill-tag">Canva</span>
             </div>
           </div>
 
           <div class="cv-skill-group">
-            <div class="cv-skill-group-title">Tools &amp; Platforms</div>
+            <div class="cv-skill-group-title">CRM & Ops Tools</div>
             <div class="cv-skill-tags">
-              <span class="cv-skill-tag">Notion</span>
-              <span class="cv-skill-tag">Linear</span>
-              <span class="cv-skill-tag">Jira</span>
-              <span class="cv-skill-tag">Asana</span>
               <span class="cv-skill-tag">Salesforce</span>
-              <span class="cv-skill-tag">Slack</span>
-              <span class="cv-skill-tag">Google Workspace</span>
-              <!-- ✏️  Add/remove tools as needed -->
+              <span class="cv-skill-tag">Zoho</span>
+              <span class="cv-skill-tag">HubSpot</span>
+              <span class="cv-skill-tag">Airtable</span>
+              <span class="cv-skill-tag">Notion</span>
+              <span class="cv-skill-tag">ConnectTeam</span>
+              <span class="cv-skill-tag">InSync (EHR)</span>
             </div>
           </div>
 
           <div class="cv-skill-group">
-            <div class="cv-skill-group-title">Focus Areas</div>
+            <div class="cv-skill-group-title">Communication & Design</div>
             <div class="cv-skill-tags">
-              <span class="cv-skill-tag">AI-Driven PM</span>
-              <span class="cv-skill-tag">Workflow Automation</span>
-              <span class="cv-skill-tag">Healthcare Tech</span>
-              <span class="cv-skill-tag">Startup Scale</span>
+              <span class="cv-skill-tag">Slack</span>
+              <span class="cv-skill-tag">Heymarket</span>
+              <span class="cv-skill-tag">CloudTalk</span>
+              <span class="cv-skill-tag">Aircall</span>
+              <span class="cv-skill-tag">Zoom</span>
+              <span class="cv-skill-tag">Google Workspace</span>
+              <span class="cv-skill-tag">MS Office</span>
+            </div>
+          </div>
+
+          <div class="cv-skill-group">
+            <div class="cv-skill-group-title">Domains</div>
+            <div class="cv-skill-tags">
+              <span class="cv-skill-tag">Behavioral Health</span>
+              <span class="cv-skill-tag">Addiction Recovery</span>
+              <span class="cv-skill-tag">Pediatric Healthcare</span>
+              <span class="cv-skill-tag">Sober Living Ops</span>
+              <span class="cv-skill-tag">HIPAA Compliance</span>
             </div>
           </div>
 
         </aside>
-
       </div>
+
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-inner">
         <span class="footer-copy">© 2026 Aamir Ali. All rights reserved.</span>
         <nav class="footer-links">
           <a href="index.html">Portfolio</a>
+          <a href="work-with-me.html">Work With Me</a>
           <a href="index.html#contact">Contact</a>
         </nav>
       </div>
     </div>
   </footer>
 
-  <div id="keyboard-hint" aria-hidden="true" style="display:none"></div>
-
+  <div id="keyboard-hint" style="display:none"></div>
   <script src="js/cursor.js"></script>
   <script src="js/main.js"></script>
 </body>

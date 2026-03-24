@@ -1,30 +1,27 @@
 /**
- * terminal.js — Boot sequence terminal intro
+ * terminal.js — Personal boot sequence intro
  */
 (function () {
-  const intro    = document.getElementById('terminal-intro');
-  const skipBtn  = document.getElementById('terminal-skip');
-  const linesEl  = document.querySelectorAll('.terminal-line');
+  const intro   = document.getElementById('terminal-intro');
+  const skipBtn = document.getElementById('terminal-skip');
+  const lines   = document.querySelectorAll('.terminal-line');
 
   if (!intro) return;
 
-  // If user already visited, skip
+  // Skip on revisit within same session
   if (sessionStorage.getItem('intro-seen')) {
     intro.classList.add('hidden');
     return;
   }
 
-  const delays = [300, 900, 1400, 1900, 2400, 2800, 3200, 3700, 4100];
+  // Staggered reveal timing (ms)
+  const delays = [300, 800, 1200, 1700, 2100, 2600, 3000, 3400, 3900, 4300, 4700];
 
-  linesEl.forEach((line, i) => {
-    setTimeout(() => {
-      line.classList.add('visible');
-    }, delays[i] || i * 500);
+  lines.forEach((line, i) => {
+    setTimeout(() => line.classList.add('visible'), delays[i] ?? i * 450);
   });
 
-  // Auto-dismiss after sequence
-  const totalDuration = (delays[linesEl.length - 1] || 4000) + 1200;
-
+  const totalDuration = (delays[lines.length - 1] ?? 5000) + 1400;
   let dismissTimer = setTimeout(dismiss, totalDuration);
 
   function dismiss() {
@@ -33,10 +30,6 @@
     intro.classList.add('hidden');
   }
 
-  if (skipBtn) {
-    skipBtn.addEventListener('click', dismiss);
-  }
-
-  // Also skip on any keypress
+  if (skipBtn) skipBtn.addEventListener('click', dismiss);
   document.addEventListener('keydown', dismiss, { once: true });
 })();
