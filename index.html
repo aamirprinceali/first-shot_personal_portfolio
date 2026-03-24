@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aamir Ali — AI Operations Strategist</title>
+  <meta name="description" content="Aamir Ali — AI Operations Strategist with a background in healthcare operations and customer success. Bridging AI tools and project management." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Grain texture -->
+  <div id="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Terminal Intro ───────────────────────────── -->
+  <div id="terminal-intro" role="dialog" aria-label="Loading">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">aamir-ali ~ portfolio</span>
+      </div>
+      <div class="terminal-body">
+
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-cmd">whoami</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-output accent">Aamir Ali</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-cmd">cat role.txt</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-output">AI Operations Strategist · Healthcare · Project Management</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-cmd">ls skills/</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-output">operations/  ai-tools/  project-management/  healthcare/</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-cmd">./launch-portfolio.sh</span>
+        </div>
+
+        <div class="terminal-line">
+          <span class="terminal-output accent">Initializing... <span class="cursor-blink"></span></span>
+        </div>
+
+      </div>
+      <button class="terminal-skip" id="terminal-skip">[ press any key or click to skip ]</button>
+    </div>
+  </div>
+
+  <!-- ─── Navigation ───────────────────────────────── -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">AA</a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#tools">AI Tools</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.html">CV</a>
+    </div>
+
+    <a href="#contact" class="nav-badge">
+      <span class="pulse-dot"></span>
+      Open to opportunities
+    </a>
+
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ─── Hero ─────────────────────────────────────── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-content">
+          <div class="hero-eyebrow reveal">Based in Dallas, TX</div>
+          <h1 class="hero-name reveal reveal-delay-1">Aamir<br/>Ali</h1>
+          <p class="hero-title reveal reveal-delay-2">
+            <span>AI Operations Strategist</span> — bridging
+            healthcare operations, customer success, and
+            intelligent project management.
+          </p>
+          <div class="hero-cta reveal reveal-delay-3">
+            <a href="#projects" class="btn-primary">View Projects →</a>
+            <a href="cv.html" class="btn-secondary">Download CV</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-avatar">AA</div>
+              <div>
+                <div class="hero-card-name">Aamir Ali</div>
+                <div class="hero-card-role">AI Operations · Healthcare PM</div>
+              </div>
+            </div>
+
+            <div class="hero-stat-grid">
+              <div class="hero-stat">
+                <div class="hero-stat-value" data-target="5" data-suffix="+">0+</div>
+                <div class="hero-stat-label">Years in Operations</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value" data-target="3" data-suffix="+">0+</div>
+                <div class="hero-stat-label">Startups Scaled</div>
+              </div>
+            </div>
+
+            <div class="hero-tools">
+              <span class="hero-tool-tag">ChatGPT</span>
+              <span class="hero-tool-tag">Claude</span>
+              <span class="hero-tool-tag">Notion AI</span>
+              <span class="hero-tool-tag">Cursor</span>
+              <span class="hero-tool-tag">Make</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About ─────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div>
+          <div class="section-label reveal">About Me</div>
+          <h2 class="section-title reveal reveal-delay-1">Operations<br/>meets AI.</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            I build the systems that make teams move faster —
+            and I use AI to make those systems smarter.
+          </p>
+        </div>
+
+        <div>
+          <!-- Stats -->
+          <div class="about-stats reveal">
+            <div class="about-stat">
+              <div class="about-stat-number" data-target="5" data-suffix="+">0+</div>
+              <div class="about-stat-label">Years experience</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number" data-target="34">0</div>
+              <div class="about-stat-label">Age</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number" data-target="10" data-suffix="+">0+</div>
+              <div class="about-stat-label">AI tools mastered</div>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="about-bio reveal reveal-delay-1">
+            <p>
+              <!-- ✏️  PLACEHOLDER: Replace this paragraph with your own bio -->
+              <strong>[Your bio here.]</strong> I'm a results-driven operations professional with
+              deep experience in healthcare operations and customer success at fast-growing,
+              high-paced startups. I've spent my career building the processes, teams, and
+              infrastructure that scale.
+            </p>
+            <p>
+              Now I'm channeling that operational expertise into the next frontier: <strong>AI-powered
+              project management</strong>. I believe the best project managers of tomorrow
+              won't just manage people and timelines — they'll architect intelligent workflows
+              that multiply team output.
+            </p>
+            <p>
+              <!-- ✏️  Feel free to add a third paragraph here -->
+            </p>
+          </div>
+
+          <!-- Highlights -->
+          <div class="about-highlights">
+            <div class="highlight-item reveal reveal-delay-2">
+              <div class="highlight-icon">🏥</div>
+              <div>
+                <div class="highlight-title">Healthcare Operations</div>
+                <div class="highlight-desc">Deep domain knowledge in healthcare workflows, compliance, and patient-facing operations.</div>
+              </div>
+            </div>
+            <div class="highlight-item reveal reveal-delay-3">
+              <div class="highlight-icon">🚀</div>
+              <div>
+                <div class="highlight-title">Startup-Scale Experience</div>
+                <div class="highlight-desc">Customer success and operations at high-growth startups — built processes from 0 to scale.</div>
+              </div>
+            </div>
+            <div class="highlight-item reveal reveal-delay-4">
+              <div class="highlight-icon">🤖</div>
+              <div>
+                <div class="highlight-title">AI-First Approach</div>
+                <div class="highlight-desc">Integrating AI tools into operations workflows to remove bottlenecks and surface better decisions.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── AI Tools ──────────────────────────────────── -->
+  <section id="tools">
+    <div class="container">
+
+      <div class="tools-header">
+        <div class="section-label reveal">AI Toolbox</div>
+        <h2 class="section-title reveal reveal-delay-1">Tools I use<br/>to work smarter.</h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          The AI ecosystem moves fast. These are the tools in my
+          active stack — each one integrated into how I plan,
+          build, and deliver work.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+
+        <div class="tool-card reveal">
+          <div class="tool-icon">🧠</div>
+          <div class="tool-name">ChatGPT</div>
+          <div class="tool-desc">Strategic drafting, brainstorming, SOPs, and research acceleration.</div>
+          <span class="tool-category">LLM</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-1">
+          <div class="tool-icon">✦</div>
+          <div class="tool-name">Claude</div>
+          <div class="tool-desc">Long-form analysis, document synthesis, and workflow automation prompts.</div>
+          <span class="tool-category">LLM</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-2">
+          <div class="tool-icon">📓</div>
+          <div class="tool-name">Notion AI</div>
+          <div class="tool-desc">AI-enhanced knowledge bases, project wikis, and meeting summaries.</div>
+          <span class="tool-category">Productivity</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-3">
+          <div class="tool-icon">⚡</div>
+          <div class="tool-name">Make (Integromat)</div>
+          <div class="tool-desc">No-code automation connecting apps and building operational workflows.</div>
+          <span class="tool-category">Automation</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-1">
+          <div class="tool-icon">🔮</div>
+          <div class="tool-name">Cursor</div>
+          <div class="tool-desc">AI-native code editor for building lightweight tools and automations.</div>
+          <span class="tool-category">Dev</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-2">
+          <div class="tool-icon">📊</div>
+          <div class="tool-name">Perplexity AI</div>
+          <div class="tool-desc">Real-time research and competitive analysis with cited sources.</div>
+          <span class="tool-category">Research</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-3">
+          <div class="tool-icon">🎨</div>
+          <div class="tool-name">Midjourney</div>
+          <div class="tool-desc">Visual ideation, presentation assets, and design concept generation.</div>
+          <span class="tool-category">Creative</span>
+        </div>
+
+        <div class="tool-card reveal reveal-delay-4">
+          <div class="tool-icon">📋</div>
+          <div class="tool-name">Linear + AI</div>
+          <div class="tool-desc">Project tracking with AI-assisted issue triage and sprint planning.</div>
+          <span class="tool-category">PM</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Projects ──────────────────────────────────── -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="projects-header">
+        <div>
+          <div class="section-label reveal">Work</div>
+          <h2 class="section-title reveal reveal-delay-1">Projects &<br/>Case Studies</h2>
+        </div>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Real-world applications of AI and operations thinking.
+          Each project solves a concrete problem.
+        </p>
+      </div>
+
+      <!-- Projects are rendered dynamically by projects.js -->
+      <div id="projects-grid" class="projects-grid"></div>
+
+    </div>
+  </section>
+
+  <!-- ─── Contact ───────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div>
+          <div class="section-label reveal">Get in Touch</div>
+          <h2 class="section-title reveal reveal-delay-1">Let's work<br/>together.</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Open to project management roles, AI operations consulting,
+            and collaborations at the intersection of healthcare and AI.
+          </p>
+
+          <div class="contact-info">
+            <a href="mailto:aamirali1211@gmail.com" class="contact-item reveal reveal-delay-2">
+              <div class="contact-item-icon">✉</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">aamirali1211@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="tel:+19722144380" class="contact-item reveal reveal-delay-3">
+              <div class="contact-item-icon">📱</div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">(972) 214-4380</div>
+              </div>
+            </a>
+
+            <a href="cv.html" class="contact-item reveal reveal-delay-4">
+              <div class="contact-item-icon">📄</div>
+              <div>
+                <div class="contact-item-label">Resume / CV</div>
+                <div class="contact-item-value">View full curriculum vitae →</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Message form -->
+        <form class="contact-form reveal reveal-delay-1" id="contact-form">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message →</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Aamir Ali. All rights reserved.</span>
+        <nav class="footer-links">
+          <a href="#about">About</a>
+          <a href="#tools">Tools</a>
+          <a href="#projects">Projects</a>
+          <a href="cv.html">CV</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Keyboard Hint ─────────────────────────────── -->
+  <div id="keyboard-hint" aria-hidden="true">
+    <span class="key">1</span>–<span class="key">5</span> to navigate
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/terminal.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
