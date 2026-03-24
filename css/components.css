@@ -161,15 +161,6 @@ body.cursor-hover #cursor-ring {
   color: var(--text-secondary);
 }
 
-/* ─── Playfair Display on headings ───────────────────── */
-.hero-name,
-.section-title,
-.cv-name {
-  font-family: var(--font-display);
-  font-style: italic;
-  letter-spacing: -0.01em;
-}
-
 /* ─── Hero Section ────────────────────────────────────── */
 #hero {
   min-height: 100vh;
@@ -344,6 +335,13 @@ body.cursor-hover #cursor-ring {
   border-radius: var(--radius-sm);
   padding: 12px 14px;
   border: 1px solid var(--border);
+  transition: transform var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+}
+
+.hero-domain:hover {
+  transform: scale(1.05) translateY(-3px);
+  border-color: var(--border-hover);
+  background: var(--bg-secondary);
 }
 
 .hero-domain-label {
@@ -477,7 +475,7 @@ body.cursor-hover #cursor-ring {
   border-radius: 100px;
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.45s ease, transform 0.45s ease,
+  transition: opacity 0.45s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
               border-color var(--transition-base), color var(--transition-base);
 }
 
@@ -496,6 +494,7 @@ body.cursor-hover #cursor-ring {
 .exp-tag:hover {
   border-color: var(--border-hover);
   color: var(--text-primary);
+  transform: scale(1.06) translateY(-3px);
 }
 
 /* ─── AI Tools Section ────────────────────────────────── */
