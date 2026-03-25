@@ -110,19 +110,38 @@ if (hint) {
   }, 5000);
 }
 
-// ─── Contact Form ─────────────────────────────────────
+// ─── Contact Form — Web3Forms ─────────────────────────
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn      = contactForm.querySelector('.btn-primary');
     const original = btn.textContent;
-    btn.textContent = 'Message sent ✓';
+
+    btn.textContent = 'Sending...';
     btn.disabled    = true;
-    setTimeout(() => {
-      btn.textContent = original;
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body:   new FormData(contactForm)
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        btn.textContent = 'Message sent ✓';
+        contactForm.reset();
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.disabled    = false;
+        }, 3000);
+      } else {
+        btn.textContent = 'Something went wrong — try email directly';
+        btn.disabled    = false;
+      }
+    } catch {
+      btn.textContent = 'Network error — try email directly';
       btn.disabled    = false;
-      contactForm.reset();
-    }, 3000);
+    }
   });
 }
