@@ -15,18 +15,42 @@
  */
 
 const PROJECTS = [
-  // ─── Add your projects here ──────────────────────────
-  // Example (uncomment and edit):
-  //
-  // {
-  //   title: "AI-Powered Intake Triage",
-  //   description: "Automated patient intake workflow using GPT-4 to classify urgency levels and route tickets to the right care team, reducing manual triage time by 60%.",
-  //   tags: ["AI", "GPT-4", "Healthcare", "Automation"],
-  //   liveUrl: "https://your-demo.com",
-  //   githubUrl: "https://github.com/aamirali/project",
-  //   status: "Completed",
-  //   previewUrl: "https://your-demo.com"
-  // },
+  {
+    title: "NextRound — Job Hunt HQ",
+    description: "A full job hunting command center built from scratch. Track every application, prep for interviews, compose recruiter emails with built-in templates, and monitor your pipeline from first apply to final offer — all in one place.",
+    tags: ["React", "TypeScript", "Vite", "CRM"],
+    liveUrl: "",
+    githubUrl: "https://github.com/aamirprinceali/NextRound",
+    status: "In Progress",
+    previewUrl: ""
+  },
+  {
+    title: "Managr — Sober Living Ops",
+    description: "An operations platform built for sober living facilities. Manage residents, track drug tests, assign chores, log medications and meetings, and flag violations — everything a house manager needs to run a tight ship.",
+    tags: ["Next.js", "Supabase", "Tailwind", "Healthcare"],
+    liveUrl: "",
+    githubUrl: "https://github.com/aamirprinceali/managr",
+    status: "In Progress",
+    previewUrl: ""
+  },
+  {
+    title: "HomeBase — Family Command Center",
+    description: "A mobile app that keeps the whole household on the same page. Manage family members, shared tasks, schedules, and house responsibilities — all backed by real-time Firebase sync.",
+    tags: ["React Native", "Expo", "Firebase", "Mobile"],
+    liveUrl: "",
+    githubUrl: "https://github.com/aamirprinceali/HomeBase",
+    status: "In Progress",
+    previewUrl: ""
+  },
+  {
+    title: "HelloHero — Scheduling System",
+    description: "A scheduling system built for HelloHero, a mental health organization. Manages therapy providers across multiple schools and districts — with a visual timeline, session assignment, student tracking, and real-time provider capacity.",
+    tags: ["Next.js", "TypeScript", "Zustand", "Scheduling"],
+    liveUrl: "",
+    githubUrl: "",
+    status: "In Progress",
+    previewUrl: ""
+  },
 ];
 
 // ─── Renderer ────────────────────────────────────────
