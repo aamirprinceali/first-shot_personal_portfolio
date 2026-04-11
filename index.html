@@ -6,9 +6,7 @@
   <title>Aamir Ali — Operations & Systems</title>
   <meta name="description" content="Aamir Ali — Operations professional with a background in healthcare and recovery. I build better systems and use AI to make them smarter." />
 
-  <!-- Fonts loaded via variables.css @import -->
-
-  <!-- Styles -->
+  <!-- Fonts + design tokens -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
@@ -21,50 +19,86 @@
   <div id="cursor-dot"  aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
 
-  <!-- ─── Terminal Intro ───────────────────────────── -->
+  <!-- ─── Boot Sequence Intro ─────────────────────────── -->
   <div id="terminal-intro" role="dialog" aria-label="Loading">
     <div class="terminal-window">
       <div class="terminal-titlebar">
         <span class="dot dot-red"></span>
         <span class="dot dot-yellow"></span>
         <span class="dot dot-green"></span>
-        <span class="terminal-title">aamir-ali ~ terminal</span>
+        <span class="terminal-title">aamir-ali — boot sequence</span>
       </div>
       <div class="terminal-body">
 
         <div class="terminal-line">
-          <span class="terminal-prompt">$</span>
-          <span class="terminal-cmd">identify --user</span>
+          <span class="boot-header">AAMIR-ALI-BIOS v2.0.26 &nbsp;&nbsp; Copyright © 2026</span>
         </div>
-        <div class="terminal-line">
-          <span class="terminal-output accent">✦ Aamir Ali &nbsp;&nbsp; Plano, TX</span>
-        </div>
+        <div class="terminal-line boot-spacer"></div>
 
-        <div class="terminal-line" style="margin-top: 10px;">
-          <span class="terminal-prompt">$</span>
-          <span class="terminal-cmd">load journey.log</span>
+        <div class="terminal-line">
+          <span class="boot-dim">Detecting hardware...</span>
         </div>
         <div class="terminal-line">
-          <span class="terminal-output">Recovery work → Healthcare ops → Enrollment management</span>
+          <span class="boot-text">&nbsp;&nbsp;CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-value">Problem Solver (8-core, high-efficiency)</span>
         </div>
         <div class="terminal-line">
-          <span class="terminal-output">People first. Systems second. AI makes both better.</span>
+          <span class="boot-text">&nbsp;&nbsp;RAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-value">5+ years domain knowledge loaded</span>
         </div>
+        <div class="terminal-line">
+          <span class="boot-text">&nbsp;&nbsp;NET &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-value">Team collaboration stack ready</span>
+        </div>
+        <div class="terminal-line boot-spacer"></div>
 
-        <div class="terminal-line" style="margin-top: 10px;">
-          <span class="terminal-prompt">$</span>
-          <span class="terminal-cmd">echo $mission</span>
+        <div class="terminal-line">
+          <span class="boot-dim">Loading kernel modules:</span>
         </div>
         <div class="terminal-line">
-          <span class="terminal-output accent">"Build better systems. Help more people."</span>
+          <span class="boot-text">&nbsp;&nbsp;healthcare-operations.ko &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
         </div>
+        <div class="terminal-line">
+          <span class="boot-text">&nbsp;&nbsp;enrollment-management.ko &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
+        </div>
+        <div class="terminal-line">
+          <span class="boot-text">&nbsp;&nbsp;ai-automation-stack.ko &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
+        </div>
+        <div class="terminal-line">
+          <span class="boot-text">&nbsp;&nbsp;systems-design.ko &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
+        </div>
+        <div class="terminal-line">
+          <span class="boot-text">&nbsp;&nbsp;people-first.ko &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
+        </div>
+        <div class="terminal-line boot-spacer"></div>
 
-        <div class="terminal-line" style="margin-top: 10px;">
-          <span class="terminal-prompt">$</span>
-          <span class="terminal-cmd">./launch-portfolio.sh</span>
+        <div class="terminal-line">
+          <span class="boot-dim">Starting services:</span>
         </div>
         <div class="terminal-line">
-          <span class="terminal-output accent">Welcome. &nbsp;<span class="cursor-blink"></span></span>
+          <span class="boot-text">&nbsp;&nbsp;portfolio.service &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
+        </div>
+        <div class="terminal-line">
+          <span class="boot-text">&nbsp;&nbsp;contact-form.service &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="boot-ok">&nbsp;[  OK  ]</span>
+        </div>
+        <div class="terminal-line boot-spacer"></div>
+
+        <div class="terminal-line">
+          <span class="boot-ok">[  OK  ]&nbsp;</span>
+          <span class="boot-dim">Reached target: </span>
+          <span class="boot-header">aamir-ali.service</span>
+        </div>
+        <div class="terminal-line">
+          <span class="boot-ok">[  OK  ]&nbsp;</span>
+          <span class="boot-dim">System ready. &nbsp;</span>
+          <span class="boot-header">Welcome.<span class="cursor-blink"></span></span>
         </div>
 
       </div>
@@ -72,21 +106,28 @@
     </div>
   </div>
 
-  <!-- ─── Navigation ───────────────────────────────── -->
+  <!-- ─── Navigation ──────────────────────────────────── -->
   <nav id="nav">
-    <a href="#hero" class="nav-logo">AA</a>
+    <a href="#hero" class="nav-logo">
+      <span class="prompt-user">aamir</span>
+      <span class="prompt-at">@</span>
+      <span class="prompt-host">portfolio</span>
+      <span class="prompt-sep">:</span>
+      <span class="prompt-path">~</span>
+      <span class="prompt-char">$</span>
+    </a>
 
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#tools">Automation</a>
-      <a href="#projects">Projects</a>
-      <a href="work-with-me.html">Work With Me</a>
-      <a href="cv.html">CV</a>
+      <a href="#about">~/about</a>
+      <a href="#tools">~/tools</a>
+      <a href="#projects">~/projects</a>
+      <a href="work-with-me.html">~/work-with-me</a>
+      <a href="cv.html">~/cv</a>
     </div>
 
     <a href="work-with-me.html" class="nav-badge">
       <span class="pulse-dot"></span>
-      Open to Collaborate
+      available
     </a>
 
     <button class="nav-hamburger" aria-label="Toggle menu">
@@ -94,88 +135,156 @@
     </button>
   </nav>
 
-  <!-- ─── Hero ─────────────────────────────────────── -->
+  <!-- ─── Hero ──────────────────────────────────────────── -->
   <section id="hero">
     <div class="container">
       <div class="hero-grid">
 
+        <!-- Left: name + tagline -->
         <div class="hero-content">
-          <div class="hero-eyebrow reveal">Plano, TX · Open to Remote</div>
+          <div class="hero-eyebrow reveal">
+            <span class="ey-prompt">$</span>
+            <span class="ey-path">whoami &nbsp;·&nbsp; Plano, TX &nbsp;·&nbsp; Open to Remote</span>
+          </div>
           <h1 class="hero-name reveal reveal-delay-1">Aamir<br/>Ali</h1>
           <p class="hero-title reveal reveal-delay-2">
-            <span>Operations professional</span> — I build the systems that make teams
-            move faster. AI is the tool I use to make those systems smarter.
+            <span class="hl">Operations professional</span> — I build the systems that
+            make teams move faster. AI is the tool I use to make those systems smarter.
           </p>
           <div class="hero-cta reveal reveal-delay-3">
-            <a href="#projects" class="btn-primary">View Projects →</a>
-            <a href="work-with-me.html" class="btn-secondary">Work With Me</a>
+            <a href="#projects" class="btn-primary">./view-projects</a>
+            <a href="work-with-me.html" class="btn-secondary">ssh collaborate</a>
           </div>
         </div>
 
+        <!-- Right: neofetch system info card -->
         <div class="hero-visual reveal reveal-delay-2">
-          <div class="hero-card-wrapper">
-          <div class="hero-card">
-            <div class="hero-card-header">
-              <div class="hero-avatar">AA</div>
-              <div>
-                <div class="hero-card-name">Aamir Ali</div>
-                <div class="hero-card-role">Operations · Healthcare · AI & Automation</div>
-              </div>
+          <div class="neofetch-card">
+            <div class="neofetch-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="neofetch-title">aamir@portfolio — system info</span>
             </div>
+            <div class="neofetch-body">
+              <div class="neofetch-user">aamir@portfolio</div>
+              <div class="neofetch-sep">──────────────────────</div>
 
-            <div class="hero-domain-grid">
-              <div class="hero-domain">
-                <div class="hero-domain-label">Healthcare</div>
-                <div class="hero-domain-sub">5+ years in the field</div>
+              <div class="neofetch-row">
+                <span class="neofetch-key">name</span>
+                <span class="neofetch-colon">:</span>
+                <span class="neofetch-val"><span class="v-hi">Aamir Ali</span></span>
               </div>
-              <div class="hero-domain">
-                <div class="hero-domain-label">Recovery</div>
-                <div class="hero-domain-sub">House & case mgmt</div>
+              <div class="neofetch-row">
+                <span class="neofetch-key">role</span>
+                <span class="neofetch-colon">:</span>
+                <span class="neofetch-val">Operations Engineer</span>
               </div>
-              <div class="hero-domain">
-                <div class="hero-domain-label">Operations</div>
-                <div class="hero-domain-sub">Systems & processes</div>
+              <div class="neofetch-row">
+                <span class="neofetch-key">location</span>
+                <span class="neofetch-colon">:</span>
+                <span class="neofetch-val">Plano, TX (Remote OK)</span>
               </div>
-              <div class="hero-domain">
-                <div class="hero-domain-label">AI & Automation</div>
-                <div class="hero-domain-sub">Tools that do the work</div>
+              <div class="neofetch-row">
+                <span class="neofetch-key">uptime</span>
+                <span class="neofetch-colon">:</span>
+                <span class="neofetch-val"><span class="v-amber">5+</span> yrs in the field</span>
               </div>
-            </div>
+              <div class="neofetch-row">
+                <span class="neofetch-key">status</span>
+                <span class="neofetch-colon">:</span>
+                <span class="neofetch-val"><span class="v-green">● open to collaborate</span></span>
+              </div>
 
-            <div class="hero-tools">
-              <span class="hero-tool-tag">n8n</span>
-              <span class="hero-tool-tag">ChatGPT</span>
-              <span class="hero-tool-tag">Claude</span>
-              <span class="hero-tool-tag">Notion</span>
-              <span class="hero-tool-tag">Canva</span>
+              <div class="neofetch-divider"></div>
+
+              <div class="neofetch-bars">
+                <div class="nf-bar-row">
+                  <span class="nf-bar-label">healthcare</span>
+                  <div class="nf-bar-track"><div class="nf-bar-fill" style="width:90%"></div></div>
+                  <span class="nf-bar-pct">90%</span>
+                </div>
+                <div class="nf-bar-row">
+                  <span class="nf-bar-label">ops design</span>
+                  <div class="nf-bar-track"><div class="nf-bar-fill" style="width:95%"></div></div>
+                  <span class="nf-bar-pct">95%</span>
+                </div>
+                <div class="nf-bar-row">
+                  <span class="nf-bar-label">ai tools</span>
+                  <div class="nf-bar-track"><div class="nf-bar-fill" style="width:85%"></div></div>
+                  <span class="nf-bar-pct">85%</span>
+                </div>
+                <div class="nf-bar-row">
+                  <span class="nf-bar-label">automation</span>
+                  <div class="nf-bar-track"><div class="nf-bar-fill" style="width:80%"></div></div>
+                  <span class="nf-bar-pct">80%</span>
+                </div>
+              </div>
             </div>
           </div>
-          </div><!-- /.hero-card-wrapper -->
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ─── About ─────────────────────────────────────── -->
+  <!-- ─── About ─────────────────────────────────────────── -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
 
         <div>
-          <div class="section-label reveal">About Me</div>
+          <div class="section-label reveal">
+            <span class="label-prompt">$</span>
+            <span class="label-cmd">cat</span>
+            <span class="label-arg">about.md</span>
+          </div>
           <h2 class="section-title reveal reveal-delay-1">People first.<br/>Systems second.</h2>
           <p class="section-subtitle reveal reveal-delay-2">
-            I got into healthcare by accident and stayed
-            because I genuinely enjoy helping people
-            navigate hard moments.
+            I got into healthcare by accident and stayed because I genuinely enjoy
+            helping people navigate hard moments.
           </p>
+
+          <!-- Bio inside a terminal log panel -->
+          <div class="terminal-log-panel reveal reveal-delay-2">
+            <div class="log-panel-header">
+              <span class="log-panel-title">
+                <span class="lp-cmd">tail</span>
+                <span>&nbsp;-f&nbsp;</span>
+                <span class="lp-file">journey.log</span>
+              </span>
+              <span class="log-panel-status">STREAMING</span>
+            </div>
+            <div class="log-panel-body">
+              <p>
+                I started in recovery work — managing a sober living facility, helping residents
+                rebuild their lives after addiction. That experience shaped everything about how I
+                operate: I lead with empathy, I take accountability seriously, and I genuinely care
+                about the people I work with and for.
+              </p>
+              <p>
+                These days I'm running enrollment operations in pediatric behavioral health, building
+                the workflows that connect families to care. I love the problem-solving side of it —
+                <strong>there's always something broken that can be made better</strong>, and I can't
+                leave a busted process alone until it runs the way it should.
+              </p>
+              <p>
+                Outside of work I keep it pretty simple — working out at the gym, walking my dog
+                <strong>Casper</strong>, and enjoying good food around Dallas. I've been deep in the
+                AI rabbit hole for the past couple years and it's changed how I work completely —
+                I use it to move faster, cut the busywork, and focus on the stuff that actually matters.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div>
           <!-- Expertise Tags -->
           <div class="expertise-tags-section">
-            <div class="expertise-tags-label reveal">Areas of experience</div>
+            <div class="expertise-tags-label reveal">
+              <span class="etl-prompt">$</span>
+              &nbsp;ls ./skills/
+            </div>
             <div id="expertise-tags">
               <span class="exp-tag">Healthcare Operations</span>
               <span class="exp-tag">Behavioral Health</span>
@@ -188,30 +297,6 @@
               <span class="exp-tag">Content Creation</span>
               <span class="exp-tag">Website Building</span>
             </div>
-          </div>
-
-          <!-- Bio -->
-          <div class="about-bio reveal reveal-delay-1">
-            <p>
-              I started in recovery work — managing a sober living facility, helping residents
-              rebuild their lives after addiction. That experience shaped everything about how I
-              operate: I lead with empathy, I take accountability seriously, and I genuinely care
-              about the people I work with and for.
-            </p>
-            <p>
-              These days I'm running enrollment operations in pediatric behavioral health, building
-              the workflows that connect families to care. I love the problem-solving side of it —
-              <strong>there's always something broken that can be made better</strong>, and I can't
-              leave a busted process alone until it runs the way it should.
-            </p>
-            <p>
-              Outside of work I keep it pretty simple — working out at the gym, walking my dog
-              <strong>Casper</strong>, and enjoying good food around Dallas. I've been deep in the
-              AI rabbit hole for the past couple years and it's changed how I work completely — I
-              use it to move faster, cut the busywork, and focus on the stuff that actually matters.
-              I also love teaching it to others, and I'm always happy to show someone how to
-              actually use these tools day-to-day.
-            </p>
           </div>
 
           <!-- Highlights -->
@@ -241,7 +326,7 @@
               <div class="highlight-icon">📊</div>
               <div>
                 <div class="highlight-title">Custom Tools & Dashboards</div>
-                <div class="highlight-desc">I build custom dashboards, internal tools, and automations that give teams real visibility into their operations — no more digging through spreadsheets.</div>
+                <div class="highlight-desc">I build custom dashboards, internal tools, and automations that give teams real visibility into their operations.</div>
               </div>
             </div>
           </div>
@@ -251,73 +336,101 @@
     </div>
   </section>
 
-  <!-- ─── AI & Automation ───────────────────────────── -->
+  <!-- ─── AI & Automation ──────────────────────────────── -->
   <section id="tools">
     <div class="container">
 
       <div class="tools-header">
-        <div class="section-label reveal">Toolbox</div>
+        <div class="section-label reveal">
+          <span class="label-prompt">$</span>
+          <span class="label-cmd">apt</span>
+          <span class="label-arg">list --installed</span>
+        </div>
         <h2 class="section-title reveal reveal-delay-1">AI & Automation<br/>in my daily stack.</h2>
         <p class="section-subtitle reveal reveal-delay-2">
-          These aren't just tools I've heard of — they're in my
-          active workflow. I use them to get more done, move faster,
-          and build things that used to require a whole team.
+          These aren't just tools I've heard of — they're in my active workflow. I use
+          them to get more done, move faster, and build things that used to require a whole team.
         </p>
+        <div class="tools-cmd-output reveal reveal-delay-2">Listing installed packages — 8 packages found.</div>
       </div>
 
       <div class="tools-grid">
 
         <div class="tool-card reveal">
-          <div class="tool-icon">🧠</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">🧠</div>
+            <span class="tool-version">v4.0</span>
+          </div>
           <div class="tool-name">ChatGPT</div>
           <div class="tool-desc">My go-to for drafting SOPs, brainstorming, rewriting communications, and research acceleration.</div>
           <span class="tool-category">LLM</span>
         </div>
 
         <div class="tool-card reveal reveal-delay-1">
-          <div class="tool-icon">✦</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">✦</div>
+            <span class="tool-version">v3.7</span>
+          </div>
           <div class="tool-name">Claude</div>
           <div class="tool-desc">Long-form analysis, document synthesis, complex reasoning, and building things like this site.</div>
           <span class="tool-category">LLM</span>
         </div>
 
         <div class="tool-card reveal reveal-delay-2">
-          <div class="tool-icon">♊</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">♊</div>
+            <span class="tool-version">v2.0</span>
+          </div>
           <div class="tool-name">Gemini</div>
           <div class="tool-desc">Google Workspace integration, data lookups, and quick research embedded in my daily tools.</div>
           <span class="tool-category">LLM</span>
         </div>
 
         <div class="tool-card reveal reveal-delay-3">
-          <div class="tool-icon">🔀</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">🔀</div>
+            <span class="tool-version">v1.0</span>
+          </div>
           <div class="tool-name">n8n</div>
           <div class="tool-desc">Open-source workflow automation — connecting apps, triggering actions, and removing manual steps.</div>
           <span class="tool-category">Automation</span>
         </div>
 
         <div class="tool-card reveal">
-          <div class="tool-icon">📱</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">📱</div>
+            <span class="tool-version">latest</span>
+          </div>
           <div class="tool-name">Blotato</div>
           <div class="tool-desc">AI-powered content repurposing and social media automation across platforms.</div>
           <span class="tool-category">Content</span>
         </div>
 
         <div class="tool-card reveal reveal-delay-1">
-          <div class="tool-icon">✦</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">✦</div>
+            <span class="tool-version">v2.1</span>
+          </div>
           <div class="tool-name">Gamma</div>
           <div class="tool-desc">AI-generated presentations and docs that actually look good without hours of design work.</div>
           <span class="tool-category">Productivity</span>
         </div>
 
         <div class="tool-card reveal reveal-delay-2">
-          <div class="tool-icon">📓</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">📓</div>
+            <span class="tool-version">v3.0</span>
+          </div>
           <div class="tool-name">Notion</div>
           <div class="tool-desc">My operational home base — knowledge management, project tracking, team wikis, and SOPs.</div>
           <span class="tool-category">Ops</span>
         </div>
 
         <div class="tool-card reveal reveal-delay-3">
-          <div class="tool-icon">🎨</div>
+          <div class="tool-pkg-line">
+            <div class="tool-icon">🎨</div>
+            <span class="tool-version">v4.0</span>
+          </div>
           <div class="tool-name">Canva</div>
           <div class="tool-desc">Quick design work for presentations, social content, and visual assets without a designer.</div>
           <span class="tool-category">Design</span>
@@ -327,19 +440,31 @@
     </div>
   </section>
 
-  <!-- ─── Projects ──────────────────────────────────── -->
+  <!-- ─── Projects ─────────────────────────────────────── -->
   <section id="projects">
     <div class="container">
 
       <div class="projects-header">
         <div>
-          <div class="section-label reveal">Work</div>
-          <h2 class="section-title reveal reveal-delay-1">Projects &<br/>Case Studies</h2>
+          <div class="section-label reveal">
+            <span class="label-prompt">$</span>
+            <span class="label-cmd">ps</span>
+            <span class="label-arg">aux --projects</span>
+          </div>
+          <h2 class="section-title reveal reveal-delay-1">Active<br/>Processes</h2>
         </div>
         <p class="section-subtitle reveal reveal-delay-2">
-          Real problems. Real solutions. Each project is something
-          I built or a workflow I designed that solved a specific need.
+          Real problems. Real solutions. Each project is something I built or a workflow
+          I designed that solved a specific need.
         </p>
+      </div>
+
+      <!-- Process table header -->
+      <div class="process-table-header reveal">
+        <span class="pt-col">PID</span>
+        <span class="pt-col">PROCESS NAME</span>
+        <span class="pt-col">STATUS</span>
+        <span class="pt-col">STACK</span>
       </div>
 
       <div id="projects-grid" class="projects-grid"></div>
@@ -347,26 +472,35 @@
     </div>
   </section>
 
-  <!-- ─── Contact ───────────────────────────────────── -->
+  <!-- ─── Contact ──────────────────────────────────────── -->
   <section id="contact">
     <div class="container">
       <div class="contact-grid">
 
         <div>
-          <div class="section-label reveal">Get in Touch</div>
+          <div class="section-label reveal">
+            <span class="label-prompt">$</span>
+            <span class="label-cmd">ping</span>
+            <span class="label-arg">aamir.local</span>
+          </div>
           <h2 class="section-title reveal reveal-delay-1">Let's connect<br/>and build.</h2>
           <p class="section-subtitle reveal reveal-delay-2">
-            Whether you need a custom dashboard, an automation that saves
-            your team hours every week, an internal tool, or just want to
-            talk operations — I'm genuinely happy to chat about what we
-            can build together.
+            Whether you need a custom dashboard, an automation that saves your team hours,
+            an internal tool, or just want to talk operations — I'm happy to chat.
           </p>
+
+          <div class="contact-ssh-line reveal reveal-delay-2">
+            <span class="ssh-prompt">$</span>&nbsp;
+            <span class="ssh-cmd">ssh</span>&nbsp;
+            <span class="ssh-arg">aamir@collaborate</span>
+            <span class="ssh-cursor"></span>
+          </div>
 
           <div class="contact-info">
             <a href="mailto:aamirali1211@gmail.com" class="contact-item reveal reveal-delay-2">
               <div class="contact-item-icon">✉</div>
               <div>
-                <div class="contact-item-label">Email</div>
+                <div class="contact-item-label">// email</div>
                 <div class="contact-item-value">aamirali1211@gmail.com</div>
               </div>
             </a>
@@ -374,7 +508,7 @@
             <a href="tel:+19722144380" class="contact-item reveal reveal-delay-3">
               <div class="contact-item-icon">📱</div>
               <div>
-                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-label">// phone</div>
                 <div class="contact-item-value">(972) 214-4380</div>
               </div>
             </a>
@@ -382,7 +516,7 @@
             <a href="https://linkedin.com/in/aamirnali" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-3">
               <div class="contact-item-icon">in</div>
               <div>
-                <div class="contact-item-label">LinkedIn</div>
+                <div class="contact-item-label">// linkedin</div>
                 <div class="contact-item-value">linkedin.com/in/aamirnali</div>
               </div>
             </a>
@@ -390,23 +524,15 @@
             <a href="https://github.com/aamirprinceali" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-4">
               <div class="contact-item-icon">⌥</div>
               <div>
-                <div class="contact-item-label">GitHub</div>
+                <div class="contact-item-label">// github</div>
                 <div class="contact-item-value">github.com/aamirprinceali</div>
               </div>
             </a>
 
-            <div class="contact-item reveal reveal-delay-4">
-              <div class="contact-item-icon">💬</div>
-              <div>
-                <div class="contact-item-label">Discord</div>
-                <div class="contact-item-value">prince_aamir</div>
-              </div>
-            </div>
-
             <a href="cv.html" class="contact-item reveal reveal-delay-4">
               <div class="contact-item-icon">📄</div>
               <div>
-                <div class="contact-item-label">Resume / CV</div>
+                <div class="contact-item-label">// resume</div>
                 <div class="contact-item-value">View full curriculum vitae →</div>
               </div>
             </a>
@@ -418,36 +544,51 @@
           <input type="hidden" name="subject" value="New message from your portfolio" />
           <input type="hidden" name="from_name" value="Portfolio Contact Form" />
           <input type="checkbox" name="botcheck" style="display:none" />
+
+          <div class="form-prompt-header">
+            <span class="fph-prompt">$</span>&nbsp;
+            <span class="fph-cmd">./send-message.sh</span>
+          </div>
+
           <div class="form-group">
-            <label class="form-label" for="name">Name</label>
-            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required />
+            <label class="form-label" for="name">
+              <span class="fl-prompt">→</span>&nbsp;<span class="fl-var">$NAME</span>
+            </label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="your name" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="email">Email</label>
+            <label class="form-label" for="email">
+              <span class="fl-prompt">→</span>&nbsp;<span class="fl-var">$EMAIL</span>
+            </label>
             <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="message">Message</label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="What are you working on? How can I help?" required></textarea>
+            <label class="form-label" for="message">
+              <span class="fl-prompt">→</span>&nbsp;<span class="fl-var">$MESSAGE</span>
+            </label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="what are you working on? how can I help?" required></textarea>
           </div>
-          <button type="submit" class="btn-primary">Send Message →</button>
+          <button type="submit" class="btn-primary">./send →</button>
         </form>
 
       </div>
     </div>
   </section>
 
-  <!-- ─── Footer ────────────────────────────────────── -->
+  <!-- ─── Footer ───────────────────────────────────────── -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-copy">© 2026 Aamir Ali. Built with intention.</span>
+        <span class="footer-copy">
+          <span class="fc-prompt">$</span>&nbsp;
+          echo "© 2026 Aamir Ali. Built with intention."
+        </span>
         <nav class="footer-links">
-          <a href="#about">About</a>
-          <a href="#tools">Automation</a>
-          <a href="#projects">Projects</a>
-          <a href="work-with-me.html">Work With Me</a>
-          <a href="cv.html">CV</a>
+          <a href="#about">~/about</a>
+          <a href="#tools">~/tools</a>
+          <a href="#projects">~/projects</a>
+          <a href="work-with-me.html">~/work-with-me</a>
+          <a href="cv.html">~/cv</a>
         </nav>
       </div>
     </div>

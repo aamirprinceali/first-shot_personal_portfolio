@@ -71,34 +71,42 @@ function renderProjects() {
     return;
   }
 
-  grid.innerHTML = PROJECTS.map((p, i) => `
+  grid.innerHTML = PROJECTS.map((p, i) => {
+    const pid = String(i + 1).padStart(3, '0');
+    return `
     <div class="project-card reveal reveal-delay-${(i % 4) + 1}">
       <div class="project-preview">
         ${p.previewUrl
           ? `<iframe src="${p.previewUrl}" loading="lazy" title="${p.title} preview" sandbox="allow-scripts allow-same-origin"></iframe>`
-          : `<div class="project-preview-placeholder">[ preview ]</div>`
+          : `<div class="project-preview-placeholder">
+               <span class="placeholder-pid">PID ${pid}</span>
+               <span>[ no preview — process running ]</span>
+             </div>`
         }
         <div class="project-overlay">
-          ${p.liveUrl   ? `<a href="${p.liveUrl}"   target="_blank" rel="noopener" class="project-overlay-btn">↗ Live demo</a>` : ''}
-          ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="project-overlay-btn">⌥ Source</a>` : ''}
+          ${p.liveUrl   ? `<a href="${p.liveUrl}"   target="_blank" rel="noopener" class="project-overlay-btn">↗ live demo</a>` : ''}
+          ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="project-overlay-btn">⌥ source</a>` : ''}
         </div>
       </div>
       <div class="project-body">
-        <div class="project-tags">
-          ${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
+        <div class="project-proc-row">
+          <span class="project-pid">${pid}</span>
+          <div class="project-tags">
+            ${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
+          </div>
         </div>
         <div class="project-title">${p.title}</div>
         <div class="project-desc">${p.description}</div>
         <div class="project-footer">
           <div class="project-links">
-            ${p.liveUrl   ? `<a href="${p.liveUrl}"   target="_blank" rel="noopener" class="project-link">↗ Demo</a>` : ''}
-            ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="project-link">⌥ GitHub</a>` : ''}
+            ${p.liveUrl   ? `<a href="${p.liveUrl}"   target="_blank" rel="noopener" class="project-link">↗ demo</a>` : ''}
+            ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="project-link">⌥ github</a>` : ''}
           </div>
           <div class="project-status">${p.status}</div>
         </div>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 
   // Re-observe new cards for reveal animation
   grid.querySelectorAll('.reveal').forEach((el) => {

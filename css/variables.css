@@ -1,68 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
-  /* ── Backgrounds ───────────────────────────────── */
-  --bg:           #05060B;
-  --bg-soft:      #090A11;
-  --card:         #0D0F18;
-  --card-2:       #121420;
-  --card-3:       #171A26;
+  /* ── Core backgrounds ──────────────────────────── */
+  --bg:           #080808;
+  --bg-2:         #0e0e0e;
+  --bg-3:         #141414;
+  --bg-4:         #1a1a1a;
 
   /* ── Text ──────────────────────────────────────── */
-  --text:         #EEF0FF;
-  --text-2:       #9196B8;
-  --text-muted:   #3E4265;
+  --text:         #e2e2e2;   /* softened — not harsh white */
+  --text-2:       #737373;   /* secondary */
+  --text-muted:   #3a3a3a;   /* muted / borders */
+  --text-dim:     #2a2a2a;
 
   /* ── Borders ───────────────────────────────────── */
-  --border:       rgba(255, 255, 255, 0.055);
-  --border-soft:  rgba(255, 255, 255, 0.03);
-  --border-hover: rgba(0, 217, 255, 0.28);
+  --border:       rgba(255,255,255,0.07);
+  --border-2:     rgba(255,255,255,0.12);
 
-  /* ── Accent ────────────────────────────────────── */
-  --accent:       #00D9FF;
-  --accent-2:     #00A8CC;
-  --accent-dim:   rgba(0, 217, 255, 0.07);
-  --accent-glow:  rgba(0, 217, 255, 0.18);
-  --accent-pulse: rgba(0, 217, 255, 0.35);
+  /* ── Terminal accent colors ────────────────────── */
+  --green:        #4ade80;   /* [OK] / active / success */
+  --green-dim:    rgba(74, 222, 128, 0.08);
+  --green-border: rgba(74, 222, 128, 0.2);
 
-  /* ── Status ────────────────────────────────────── */
-  --ok:           #34D399;
-  --ok-dim:       rgba(52, 211, 153, 0.1);
-  --warn:         #FBBF24;
-  --warn-dim:     rgba(251, 191, 36, 0.1);
-  --danger:       #F87171;
+  --amber:        #fbbf24;   /* PIDs / values / timestamps */
+  --amber-dim:    rgba(251, 191, 36, 0.08);
+
+  --blue:         #93c5fd;   /* commands / links / paths */
+  --blue-dim:     rgba(147, 197, 253, 0.08);
+
+  --red:          #f87171;   /* errors / warnings */
 
   /* ── Typography ────────────────────────────────── */
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-sans:    'DM Sans', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 
   /* ── Spacing ───────────────────────────────────── */
-  --section-padding:  clamp(90px, 13vw, 160px);
-  --container-max:    1120px;
-  --container-padding: clamp(20px, 5vw, 64px);
+  --section-padding:   clamp(80px, 11vw, 130px);
+  --container-max:     1080px;
+  --container-padding: clamp(20px, 5vw, 56px);
 
   /* ── Shape ─────────────────────────────────────── */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
   /* ── Motion ────────────────────────────────────── */
-  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --t-fast:     0.15s ease;
-  --t-base:     0.28s ease;
-  --t-slow:     0.6s var(--ease-out);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:   0.12s ease;
+  --t-base:   0.25s ease;
+  --t-slow:   0.55s var(--ease-out);
 
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -73,8 +64,4 @@ body {
 }
 
 h1, h2, h3, h4, p { margin: 0; }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
