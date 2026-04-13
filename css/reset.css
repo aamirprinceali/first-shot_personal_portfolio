@@ -7,11 +7,12 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background: #030308; /* Deep space — visible through transparent body */
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background: transparent; /* Let Vanta space BG show through */
+  color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
@@ -46,21 +47,12 @@ input, textarea {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--text-primary);
+  background: rgba(124, 111, 255, 0.3);
+  color: #fff;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }

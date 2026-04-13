@@ -1,67 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* ── Core backgrounds ──────────────────────────── */
-  --bg:           #080808;
-  --bg-2:         #0e0e0e;
-  --bg-3:         #141414;
-  --bg-4:         #1a1a1a;
+  /* ── Deep space backgrounds ─────────────────────── */
+  --bg:     #030308;
+  --bg-2:   #07070F;
+  --bg-3:   #0C0C1A;
+  --bg-4:   #111126;
 
   /* ── Text ──────────────────────────────────────── */
-  --text:         #e2e2e2;   /* softened — not harsh white */
-  --text-2:       #737373;   /* secondary */
-  --text-muted:   #3a3a3a;   /* muted / borders */
-  --text-dim:     #2a2a2a;
+  --text:       #E2E2F0;
+  --text-2:     #7878A0;
+  --text-muted: #383852;
 
   /* ── Borders ───────────────────────────────────── */
-  --border:       rgba(255,255,255,0.07);
-  --border-2:     rgba(255,255,255,0.12);
+  --border:   rgba(255, 255, 255, 0.055);
+  --border-2: rgba(255, 255, 255, 0.1);
 
-  /* ── Terminal accent colors ────────────────────── */
-  --green:        #4ade80;   /* [OK] / active / success */
-  --green-dim:    rgba(74, 222, 128, 0.08);
-  --green-border: rgba(74, 222, 128, 0.2);
+  /* ── Accent — indigo/violet ────────────────────── */
+  --accent:      #7C6FFF;
+  --accent-mid:  #9D94FF;
+  --accent-dim:  rgba(124, 111, 255, 0.08);
+  --accent-glow: rgba(124, 111, 255, 0.22);
 
-  --amber:        #fbbf24;   /* PIDs / values / timestamps */
-  --amber-dim:    rgba(251, 191, 36, 0.08);
+  /* ── Aurora colors (for hero bg orbs) ──────────── */
+  --aurora-1: rgba(70, 48, 210, 0.14);
+  --aurora-2: rgba(120, 70, 240, 0.09);
 
-  --blue:         #93c5fd;   /* commands / links / paths */
-  --blue-dim:     rgba(147, 197, 253, 0.08);
+  /* ── Status ─────────────────────────────────────── */
+  --green:      #34D399;
+  --green-dim:  rgba(52, 211, 153, 0.1);
+  --amber:      #FBBF24;
 
-  --red:          #f87171;   /* errors / warnings */
+  /* ── Typography ─────────────────────────────────── */
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* ── Typography ────────────────────────────────── */
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  /* ── Spacing ─────────────────────────────────────── */
+  --section-padding:   clamp(88px, 12vw, 144px);
+  --container-max:     1100px;
+  --container-padding: clamp(20px, 5vw, 60px);
 
-  /* ── Spacing ───────────────────────────────────── */
-  --section-padding:   clamp(80px, 11vw, 130px);
-  --container-max:     1080px;
-  --container-padding: clamp(20px, 5vw, 56px);
+  /* ── Shape ──────────────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
 
-  /* ── Shape ─────────────────────────────────────── */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  /* ── Missing aliases (for layout/component compat) ─ */
+  --blue:         var(--accent);
+  --blue-dim:     var(--accent-dim);
+  --blue-glow:    var(--accent-glow);
+  --green-border: rgba(52, 211, 153, 0.2);
 
-  /* ── Motion ────────────────────────────────────── */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --t-fast:   0.12s ease;
-  --t-base:   0.25s ease;
-  --t-slow:   0.55s var(--ease-out);
+  /* ── Motion ─────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast:  0.14s ease;
+  --t-base:  0.28s ease;
+  --t-slow:  0.6s var(--ease-out);
 
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--text);
-}
-
+body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); }
 h1, h2, h3, h4, p { margin: 0; }
 a { text-decoration: none; color: inherit; }

@@ -51,6 +51,24 @@ const PROJECTS = [
     status: "In Progress",
     previewUrl: ""
   },
+  {
+    title: "Clinician Dashboard",
+    description: "A provider-facing dashboard for HelloHero clinicians. View assigned students across school districts, track session completion, manage caseloads, and flag scheduling conflicts — all in one clean interface built to reduce admin overhead.",
+    tags: ["Next.js", "TypeScript", "Healthcare", "Dashboard"],
+    liveUrl: "",
+    githubUrl: "",
+    status: "In Progress",
+    previewUrl: ""
+  },
+  {
+    title: "Lead Scraping Automation",
+    description: "An automated lead generation pipeline that scrapes target websites for business contacts, deduplicates and scores the data, then pushes qualified leads directly into CRM pipelines via n8n — removing the manual research grind entirely.",
+    tags: ["n8n", "Puppeteer", "Automation", "CRM"],
+    liveUrl: "",
+    githubUrl: "",
+    status: "In Progress",
+    previewUrl: ""
+  },
 ];
 
 // ─── Renderer ────────────────────────────────────────

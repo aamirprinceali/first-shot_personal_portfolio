@@ -5,259 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV — Aamir Ali</title>
   <meta name="description" content="Curriculum vitae of Aamir Ali — Enrollment Operations Manager with a background in healthcare, recovery, and AI-enhanced workflows." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
-
-  <style>
-    .cv-page {
-      min-height: 100vh;
-      padding-top: 100px;
-      padding-bottom: 80px;
-    }
-
-    .cv-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      margin-bottom: 64px;
-      flex-wrap: wrap;
-    }
-
-    .cv-name {
-      font-size: clamp(40px, 6vw, 64px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.0;
-      color: var(--text-primary);
-      margin-bottom: 10px;
-    }
-
-    .cv-role {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    .cv-location {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-    }
-
-    .cv-header-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .cv-contact-block {
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .cv-contact-block a,
-    .cv-contact-block span {
-      font-size: 13px;
-      color: var(--text-secondary);
-      display: block;
-      transition: color var(--transition-fast);
-    }
-
-    .cv-contact-block a:hover { color: var(--text-primary); }
-
-    .cv-body {
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .cv-section { margin-bottom: 52px; }
-
-    .cv-section-title {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .cv-item {
-      margin-bottom: 32px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .cv-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-
-    .cv-item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 4px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .cv-item-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .cv-item-date {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-      flex-shrink: 0;
-    }
-
-    .cv-item-company {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      margin-bottom: 14px;
-    }
-
-    .cv-bullets {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .cv-bullet {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      padding-left: 18px;
-      position: relative;
-    }
-
-    .cv-bullet::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--text-muted);
-    }
-
-    .cv-summary {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
-    /* Sidebar */
-    .cv-sidebar {
-      position: sticky;
-      top: 100px;
-    }
-
-    .cv-skill-group { margin-bottom: 30px; }
-
-    .cv-skill-group-title {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .cv-skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .cv-skill-tag {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      padding: 5px 12px;
-      border-radius: 100px;
-      transition: all var(--transition-fast);
-    }
-
-    .cv-skill-tag:hover {
-      border-color: var(--border-hover);
-      color: var(--text-primary);
-    }
-
-    /* Print */
-    .cv-print-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      padding: 10px 18px;
-      border-radius: var(--radius-sm);
-      transition: all var(--transition-base);
-    }
-
-    .cv-print-btn:hover {
-      border-color: var(--border-hover);
-      color: var(--text-primary);
-    }
-
-    @media (max-width: 900px) {
-      .cv-body { grid-template-columns: 1fr; }
-      .cv-sidebar { position: static; border-top: 1px solid var(--border); padding-top: 48px; }
-      .cv-contact-block { text-align: left; }
-    }
-
-    @media print {
-      #nav, #cursor-dot, #cursor-ring, #grain, #scroll-progress, #keyboard-hint { display: none !important; }
-      body { background: white; color: black; cursor: default; }
-      .cv-page { padding-top: 32px; }
-      .cv-print-btn { display: none; }
-    }
-  </style>
 </head>
 <body>
 
+  <div id="vanta-bg" aria-hidden="true"></div>
   <div id="scroll-progress"></div>
   <div id="grain" aria-hidden="true"></div>
   <div id="cursor-dot"  aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
 
   <nav id="nav">
-    <a href="index.html" class="nav-logo">AA</a>
+    <a href="index.html" class="nav-logo">Aamir Ali</a>
     <div class="nav-links">
       <a href="index.html#about">About</a>
-      <a href="index.html#tools">Automation</a>
+      <a href="index.html#tools">AI & Automation</a>
       <a href="index.html#projects">Projects</a>
       <a href="work-with-me.html">Work With Me</a>
     </div>
     <a href="work-with-me.html" class="nav-badge">
       <span class="pulse-dot"></span>
-      Open to Collaborate
+      Available
     </a>
     <button class="nav-hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -267,15 +38,16 @@
   <main class="cv-page">
     <div class="container">
 
-      <!-- Header -->
+      <!-- ─── Header ──────────────────────────────────── -->
       <div class="cv-header reveal">
         <div>
           <h1 class="cv-name">Aamir Ali</h1>
           <div class="cv-role">Enrollment Operations Manager · Healthcare · AI & Automation</div>
-          <div class="cv-location">Plano, TX · Open to Remote Opportunities</div>
+          <div class="cv-location">Plano, TX · Open to Remote</div>
           <div class="cv-header-actions">
-            <a href="index.html" class="cv-print-btn">← Portfolio</a>
-            <button onclick="window.print()" class="cv-print-btn">⎙ Save as PDF</button>
+            <a href="index.html" class="cv-action-btn">← Portfolio</a>
+            <a href="resume.pdf" download class="cv-action-btn">⬇ Download CV</a>
+            <button onclick="window.print()" class="cv-action-btn">⎙ Save as PDF</button>
           </div>
         </div>
         <div class="cv-contact-block">
@@ -283,14 +55,76 @@
           <a href="tel:+19722144380">(972) 214-4380</a>
           <a href="https://linkedin.com/in/aamirnali" target="_blank" rel="noopener">linkedin.com/in/aamirnali</a>
           <a href="https://github.com/aamirprinceali" target="_blank" rel="noopener">github.com/aamirprinceali</a>
-          <span>Discord: prince_aamir</span>
         </div>
       </div>
 
+      <!-- ─── Career Timeline ───────────────────────── -->
+      <section class="timeline-section">
+        <div class="section-label reveal">
+          <span class="label-prompt">$</span>
+          <span class="label-cmd">git</span>
+          <span class="label-arg">log --career --oneline</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">Career Timeline</h2>
+        <p class="timeline-intro-text reveal reveal-delay-2">5 years · 3 orgs · one consistent thread: building systems that help people.</p>
+
+        <div class="cv-timeline-v2">
+
+          <div class="tv2-item reveal">
+            <div class="tv2-year">Jun 2020<br/>– May 2023</div>
+            <div class="tv2-dot"></div>
+            <div class="tv2-content">
+              <div class="tv2-role">House Manager / Case Manager</div>
+              <div class="tv2-company">Lighthouse Recovery · Dallas, TX</div>
+              <div class="tv2-card">
+                <div class="tv2-desc">Started in recovery operations — managing daily facility ops, overseeing residents, coordinating care plans with clinical staff, and helping people rebuild their lives after addiction. This work shaped everything about how I operate: I lead with empathy, take accountability seriously, and genuinely care about the people I work with.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tv2-item reveal reveal-delay-1">
+            <div class="tv2-year">Apr 2023<br/>– Feb 2024</div>
+            <div class="tv2-dot"></div>
+            <div class="tv2-content">
+              <div class="tv2-role">Admissions Coordinator</div>
+              <div class="tv2-company">Lighthouse Recovery · Dallas, TX</div>
+              <div class="tv2-card">
+                <div class="tv2-desc">Moved into admissions — guiding individuals and families through intake for sober living and PHP/IOP programs. First real taste of enrollment operations. Learned how to convert compassion into a structured, scalable process that actually moves people forward.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tv2-item reveal reveal-delay-2">
+            <div class="tv2-year">Mar 2024<br/>– Oct 2025</div>
+            <div class="tv2-dot"></div>
+            <div class="tv2-content">
+              <div class="tv2-role">Enrollment Coordinator → Advisor</div>
+              <div class="tv2-company">Hazel Health · Remote</div>
+              <div class="tv2-card">
+                <div class="tv2-desc">Joined a pediatric behavioral health startup and grew fast. Promoted within 13 months based on top conversion rate across a team of 25+, maintaining a 100% quality audit score while running 50–75 outbound enrollment calls daily. Built rapport with hesitant families, overcame objections, and drove consistent enrollment decisions.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tv2-item reveal reveal-delay-3">
+            <div class="tv2-year">Oct 2025<br/>– Present</div>
+            <div class="tv2-dot"></div>
+            <div class="tv2-content">
+              <div class="tv2-role">Enrollment Operations Manager</div>
+              <div class="tv2-company">HelloHero · Remote</div>
+              <div class="tv2-card">
+                <div class="tv2-desc">Now running the full enrollment function — leading a team of coordinators, designing SOPs and escalation paths, building outreach workflows, and serving as the primary partner to school districts. Own the pipeline from referral intake through handoff to clinical services, focused on throughput, quality, and family experience.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── CV Body ───────────────────────────────── -->
       <div class="cv-body">
         <div class="cv-main">
 
-          <!-- Summary -->
           <div class="cv-section reveal">
             <div class="cv-section-title">Summary</div>
             <p class="cv-summary">
@@ -304,7 +138,6 @@
             </p>
           </div>
 
-          <!-- Experience -->
           <div class="cv-section reveal reveal-delay-1">
             <div class="cv-section-title">Experience</div>
 
@@ -315,10 +148,10 @@
               </div>
               <div class="cv-item-company">HelloHero · Remote</div>
               <div class="cv-bullets">
-                <div class="cv-bullet">Own end-to-end enrollment operations from referral intake through handoff to clinical services, ensuring accountability, consistent conversion, and seamless family experiences across all enrollment pathways.</div>
-                <div class="cv-bullet">Lead, train, and support a team of Enrollment Coordinators, Care Coordinators, and Admissions staff; establish workflows, performance standards, and SLAs that drive enrollment throughput and team accountability.</div>
-                <div class="cv-bullet">Design and implement SOPs, escalation paths, and multi-channel outreach processes (email, SMS, voicemail, call scripting) to improve family engagement, consistency, and operational efficiency across districts.</div>
-                <div class="cv-bullet">Serve as primary point of contact for school district partners; review referral progress, scheduling metrics, and enrollment data to identify bottlenecks and drive continuous process improvements.</div>
+                <div class="cv-bullet">Own end-to-end enrollment operations from referral intake through handoff to clinical services, ensuring accountability, consistent conversion, and seamless family experiences.</div>
+                <div class="cv-bullet">Lead, train, and support Enrollment Coordinators, Care Coordinators, and Admissions staff; establish workflows, performance standards, and SLAs that drive throughput and team accountability.</div>
+                <div class="cv-bullet">Design SOPs, escalation paths, and multi-channel outreach processes to improve family engagement and operational efficiency across school districts.</div>
+                <div class="cv-bullet">Serve as primary point of contact for school district partners; review metrics and enrollment data to identify bottlenecks and drive continuous improvements.</div>
               </div>
             </div>
 
@@ -329,11 +162,10 @@
               </div>
               <div class="cv-item-company">Hazel Health · Remote</div>
               <div class="cv-bullets">
-                <div class="cv-bullet">Promoted to lead high-volume outbound outreach, converting school and parent referrals into scheduled therapy intakes using strategic communication cadences and structured workflow tracking.</div>
-                <div class="cv-bullet">Conducted 50–75 outbound enrollment calls daily, consistently ranked at the top of a team of 25+ for conversion rate while maintaining a 100% quality audit score.</div>
-                <div class="cv-bullet">Used consultative techniques to build rapport with families, overcome objections, and clearly convey the value of behavioral health services to drive enrollment decisions.</div>
-                <div class="cv-bullet">Built authentic rapport with hesitant and under-resourced families, addressing cultural, language, and logistical barriers to enrollment with personalized follow-through and a client-first approach.</div>
-                <div class="cv-bullet">Leveraged CRM tools to track enrollment step completion, monitor outreach progress, and document all call activity for accurate follow-up and scheduling coordination.</div>
+                <div class="cv-bullet">Promoted to lead high-volume outbound outreach, converting referrals into scheduled therapy intakes using strategic communication cadences.</div>
+                <div class="cv-bullet">Conducted 50–75 outbound calls daily, ranked top of a team of 25+ for conversion while maintaining a 100% quality audit score.</div>
+                <div class="cv-bullet">Built rapport with hesitant and under-resourced families, addressing cultural, language, and logistical barriers to enrollment.</div>
+                <div class="cv-bullet">Leveraged CRM tools to track step completion, monitor outreach progress, and document all activity for accurate follow-up.</div>
               </div>
             </div>
 
@@ -344,11 +176,10 @@
               </div>
               <div class="cv-item-company">Hazel Health · Remote</div>
               <div class="cv-bullets">
-                <div class="cv-bullet">Handled high-volume inbound and scheduled calls, guiding families through the full enrollment process with empathy, clarity, professionalism, and attention to individual needs.</div>
-                <div class="cv-bullet">Led testing pilots for new enrollment tools, working cross-functionally with the product and operations teams to provide structured feedback that drove process and system improvements.</div>
-                <div class="cv-bullet">Managed follow-ups, reschedules, and monitored enrollment step completion to ensure families were fully prepared for intake scheduling and service onboarding.</div>
-                <div class="cv-bullet">Adapted to evolving workflows and scripts within a fast-paced startup environment, contributing to process improvements that enhanced team efficiency and reduced cycle times.</div>
-                <div class="cv-bullet">Informally mentored newer team members on enrollment best practices, objection-handling, and CRM workflows, contributing to stronger team-wide performance.</div>
+                <div class="cv-bullet">Handled high-volume inbound and scheduled calls, guiding families through the full enrollment process with empathy and clarity.</div>
+                <div class="cv-bullet">Led testing pilots for new enrollment tools, providing structured feedback to product and operations teams.</div>
+                <div class="cv-bullet">Managed follow-ups and monitored step completion to ensure families were fully prepared for intake scheduling.</div>
+                <div class="cv-bullet">Informally mentored newer team members on enrollment best practices and CRM workflows.</div>
               </div>
             </div>
 
@@ -359,11 +190,10 @@
               </div>
               <div class="cv-item-company">Lighthouse Recovery · Dallas, TX</div>
               <div class="cv-bullets">
-                <div class="cv-bullet">Guided individuals and families through the admissions process for sober living and outpatient programs (PHP/IOP), providing compassionate support and clear guidance at a critical and often urgent moment.</div>
-                <div class="cv-bullet">Handled incoming inquiries and converted interest into enrollment through relationship-building, thorough needs assessments, and clear program explanation tailored to each client.</div>
-                <div class="cv-bullet">Conducted pre-admission screenings and intake assessments to determine eligibility and match clients to the appropriate level of care, balancing efficiency with sensitivity.</div>
-                <div class="cv-bullet">Coordinated with clinical, housing, and insurance teams to facilitate efficient, client-centered transitions from inquiry to admission, minimizing delays for clients in active need.</div>
-                <div class="cv-bullet">Maintained accurate and confidential client records in compliance with HIPAA and program standards, managing a steady pipeline of inquiries across multiple tracks of care.</div>
+                <div class="cv-bullet">Guided individuals and families through admissions for sober living and outpatient programs (PHP/IOP) with compassionate, clear support.</div>
+                <div class="cv-bullet">Conducted pre-admission screenings and matched clients to appropriate levels of care while balancing efficiency with sensitivity.</div>
+                <div class="cv-bullet">Coordinated with clinical, housing, and insurance teams to minimize delays for clients in active need.</div>
+                <div class="cv-bullet">Maintained accurate and confidential client records in compliance with HIPAA standards.</div>
               </div>
             </div>
 
@@ -374,16 +204,15 @@
               </div>
               <div class="cv-item-company">Lighthouse Recovery · Dallas, TX</div>
               <div class="cv-bullets">
-                <div class="cv-bullet">Delivered individualized case management to residents, helping them set and track recovery, employment, and life goals while maintaining accountability to program expectations.</div>
-                <div class="cv-bullet">Oversaw daily operations in a sober living facility, including medication schedules, resident accountability, recovery routines, and compliance with facility standards and safety protocols.</div>
-                <div class="cv-bullet">Navigated high-pressure situations requiring time management, multitasking, and conflict resolution while maintaining a supportive and structured environment for all residents.</div>
-                <div class="cv-bullet">Coordinated care plans with clinical staff, counselors, and external providers to ensure holistic support and successful program completion for each client.</div>
+                <div class="cv-bullet">Delivered individualized case management to residents, helping them set and track recovery, employment, and life goals.</div>
+                <div class="cv-bullet">Oversaw daily facility operations including medication schedules, resident accountability, and compliance with safety protocols.</div>
+                <div class="cv-bullet">Navigated high-pressure situations requiring multitasking and conflict resolution while maintaining a structured, supportive environment.</div>
+                <div class="cv-bullet">Coordinated care plans with clinical staff, counselors, and external providers for holistic support.</div>
               </div>
             </div>
 
           </div>
 
-          <!-- Education -->
           <div class="cv-section reveal reveal-delay-2">
             <div class="cv-section-title">Education</div>
 
@@ -403,11 +232,21 @@
               <div class="cv-item-company">Collin College</div>
             </div>
 
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <div class="cv-item-title">Google AI Certifications</div>
+                <div class="cv-item-date">2024 – 2025</div>
+              </div>
+              <div class="cv-item-company">Google</div>
+              <div class="cv-bullets">
+                <div class="cv-bullet">AI Fundamentals · AI for Brainstorming & Planning · AI for Research & Insights</div>
+              </div>
+            </div>
+
           </div>
 
         </div>
 
-        <!-- Sidebar -->
         <aside class="cv-sidebar reveal reveal-delay-2">
 
           <div class="cv-skill-group">
@@ -420,12 +259,10 @@
               <span class="cv-skill-tag">Stakeholder Relations</span>
               <span class="cv-skill-tag">KPI Tracking</span>
               <span class="cv-skill-tag">Multi-Channel Outreach</span>
-              <span class="cv-skill-tag">Cross-Functional Collab</span>
               <span class="cv-skill-tag">Data Analysis</span>
               <span class="cv-skill-tag">Training & Onboarding</span>
               <span class="cv-skill-tag">Change Management</span>
               <span class="cv-skill-tag">Case Management</span>
-              <span class="cv-skill-tag">Conflict Resolution</span>
               <span class="cv-skill-tag">Customer Success</span>
             </div>
           </div>
@@ -457,7 +294,7 @@
           </div>
 
           <div class="cv-skill-group">
-            <div class="cv-skill-group-title">Communication & Design</div>
+            <div class="cv-skill-group-title">Tools & Communication</div>
             <div class="cv-skill-tags">
               <span class="cv-skill-tag">Slack</span>
               <span class="cv-skill-tag">Heymarket</span>
@@ -489,7 +326,9 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-copy">© 2026 Aamir Ali. All rights reserved.</span>
+        <span class="footer-copy">
+          <span class="fc-prompt">$</span>&nbsp;echo "© 2026 Aamir Ali. Built with intention."
+        </span>
         <nav class="footer-links">
           <a href="index.html">Portfolio</a>
           <a href="work-with-me.html">Work With Me</a>
@@ -500,7 +339,10 @@
   </footer>
 
   <div id="keyboard-hint" style="display:none"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.halo.min.js"></script>
   <script src="js/cursor.js"></script>
+  <script src="js/space-bg.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
