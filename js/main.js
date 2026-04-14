@@ -101,6 +101,17 @@ if (hamburger && navLinks) {
   });
 }
 
+// ─── Section Dividers — glow when near ───────────────
+// Dividers start almost invisible and brighten as you scroll toward them.
+// rootMargin: 120px extends the "active" zone so they glow before fully visible.
+const dividers = document.querySelectorAll('.section-divider');
+if (dividers.length) {
+  const divObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.target.classList.toggle('active', e.isIntersecting));
+  }, { threshold: 0, rootMargin: '120px 0px 120px 0px' });
+  dividers.forEach(d => divObserver.observe(d));
+}
+
 // ─── Keyboard Hint Auto-hide ──────────────────────────
 const hint = document.getElementById('keyboard-hint');
 if (hint) {

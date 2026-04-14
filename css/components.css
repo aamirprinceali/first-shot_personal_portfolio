@@ -25,6 +25,95 @@
 body.cursor-hover #cursor-dot  { width: 8px; height: 8px; }
 body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(124, 111, 255, 0.6); }
 
+/* ─── Section Dividers ────────────────────────────────── */
+/*
+ * Thin ruled lines with a small constellation star cluster + label.
+ * Start almost invisible, glow up when user scrolls near that section.
+ * JS in main.js adds/removes .active via IntersectionObserver.
+ */
+.section-divider {
+  display: flex;
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 18px var(--container-padding);
+  color: var(--div-col, #7C6FFF);
+  opacity: 0.06;
+  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-divider.active { opacity: 1; }
+
+/* Lines on either side of the center cluster */
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  opacity: 0.3;
+}
+.section-divider::before {
+  background: linear-gradient(90deg, transparent, currentColor);
+  margin-right: 16px;
+}
+.section-divider::after {
+  background: linear-gradient(90deg, currentColor, transparent);
+  margin-left: 16px;
+}
+
+/* Center cluster: dot · glyph · label · glyph · dot */
+.sd-center {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sd-dot {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.55;
+  transition: box-shadow 1.6s ease, opacity 1.6s ease;
+}
+
+.sd-dot--far {
+  width: 2px; height: 2px;
+  opacity: 0.3;
+}
+
+.section-divider.active .sd-dot {
+  box-shadow: 0 0 6px currentColor;
+  opacity: 0.9;
+}
+
+.sd-glyph {
+  font-size: 7px;
+  opacity: 0.65;
+  line-height: 1;
+  transition: text-shadow 1.6s ease;
+}
+
+.section-divider.active .sd-glyph {
+  text-shadow: 0 0 8px currentColor;
+  opacity: 1;
+}
+
+.sd-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  color: currentColor;
+  transition: text-shadow 1.6s ease;
+}
+
+.section-divider.active .sd-label {
+  text-shadow: 0 0 14px rgba(var(--div-rgb), 0.7);
+  opacity: 1;
+}
+
 /* ─── Bio Card (About section) ────────────────────────── */
 .bio-card {
   background: rgba(5, 5, 14, 0.55);
@@ -575,11 +664,12 @@ body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(1
   margin-top: 28px;
 }
 
-/* Tool card — glass */
+/* Tool card — glass with ARCHITECT left accent */
 .tool-card {
   border: 1px solid rgba(255,255,255,0.07);
+  border-left: 2px solid rgba(167,139,250,0.3);
   border-radius: var(--radius-md);
-  padding: 22px;
+  padding: 24px;
   background: rgba(5, 5, 14, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -591,32 +681,42 @@ body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(1
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
+/* Left accent glow bar — expands on hover */
 .tool-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(124,111,255,0.06) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--t-base);
+  left: -1px;
+  top: 22%;
+  bottom: 22%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(167,139,250,0.85), transparent);
+  border-radius: 0 2px 2px 0;
+  opacity: 0.5;
+  transition: opacity var(--t-base), top var(--t-base), bottom var(--t-base);
 }
 
 .tool-card:hover {
-  border-color: rgba(124, 111, 255, 0.22);
-  background: rgba(124, 111, 255, 0.06);
-  transform: translateY(-3px);
-  box-shadow: 0 0 40px rgba(74, 47, 160, 0.2), 0 16px 40px rgba(0,0,0,0.4);
+  border-color: rgba(167,139,250,0.2);
+  border-left-color: rgba(167,139,250,0.65);
+  background: rgba(167,139,250,0.03);
+  transform: translateY(-4px);
+  box-shadow: -6px 0 24px rgba(167,139,250,0.1), 0 18px 40px rgba(0,0,0,0.4);
 }
 
-.tool-card:hover::before { opacity: 1; }
+.tool-card:hover::before {
+  opacity: 1;
+  top: 10%;
+  bottom: 10%;
+}
 
 .tool-pkg-line {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
-.tool-icon { font-size: 22px; line-height: 1; }
+.tool-icon { font-size: 26px; line-height: 1; }
 
 .tool-version {
   font-size: 9px;
@@ -699,9 +799,10 @@ body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(1
   gap: 14px;
 }
 
-/* Project card — glass */
+/* Project card — glass with BUILDER left accent */
 .project-card {
   border: 1px solid rgba(255,255,255,0.07);
+  border-left: 2px solid rgba(52,211,153,0.28);
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: rgba(5, 5, 14, 0.62);
@@ -714,10 +815,32 @@ body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(1
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
+/* Left accent glow bar */
+.project-card::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 15%;
+  bottom: 15%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(52,211,153,0.7), transparent);
+  border-radius: 0 2px 2px 0;
+  opacity: 0.45;
+  transition: opacity var(--t-base), top var(--t-base), bottom var(--t-base);
+  z-index: 1;
+}
+
 .project-card:hover {
-  border-color: rgba(124, 111, 255, 0.25);
+  border-color: rgba(52,211,153,0.18);
+  border-left-color: rgba(52,211,153,0.6);
   transform: translateY(-4px);
-  box-shadow: 0 0 60px rgba(74,47,160,0.22), 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: -6px 0 24px rgba(52,211,153,0.08), 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+  top: 8%;
+  bottom: 8%;
 }
 
 .project-preview {
