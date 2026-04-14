@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <div id="vanta-bg" aria-hidden="true"></div>
+  <canvas id="space-canvas" aria-hidden="true"></canvas>
   <div id="scroll-progress"></div>
   <div id="grain" aria-hidden="true"></div>
   <div id="cursor-dot"  aria-hidden="true"></div>
@@ -60,12 +60,7 @@
 
       <!-- ─── Career Timeline ───────────────────────── -->
       <section class="timeline-section">
-        <div class="section-label reveal">
-          <span class="label-prompt">$</span>
-          <span class="label-cmd">git</span>
-          <span class="label-arg">log --career --oneline</span>
-        </div>
-        <h2 class="section-title reveal reveal-delay-1">Career Timeline</h2>
+        <h2 class="section-title reveal">Career Timeline</h2>
         <p class="timeline-intro-text reveal reveal-delay-2">5 years · 3 orgs · one consistent thread: building systems that help people.</p>
 
         <div class="cv-timeline-v2">
@@ -326,9 +321,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-copy">
-          <span class="fc-prompt">$</span>&nbsp;echo "© 2026 Aamir Ali. Built with intention."
-        </span>
+        <span class="footer-copy">© 2026 Aamir Ali. Built with intention.</span>
         <nav class="footer-links">
           <a href="index.html">Portfolio</a>
           <a href="work-with-me.html">Work With Me</a>
@@ -339,8 +332,6 @@
   </footer>
 
   <div id="keyboard-hint" style="display:none"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.halo.min.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/space-bg.js"></script>
   <script src="js/main.js"></script>

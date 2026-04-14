@@ -14,9 +14,9 @@
 </head>
 <body>
 
+  <canvas id="space-canvas" aria-hidden="true"></canvas>
   <div id="scroll-progress"></div>
   <div id="grain" aria-hidden="true"></div>
-  <div id="vanta-bg" aria-hidden="true"></div>
   <div id="cursor-dot"  aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
 
@@ -108,8 +108,7 @@
         <!-- Left: name + tagline -->
         <div class="hero-content">
           <div class="hero-eyebrow reveal">
-            <span class="ey-prompt">$</span>
-            <span class="ey-path">whoami &nbsp;·&nbsp; Plano, TX &nbsp;·&nbsp; Open to Remote</span>
+            <span class="ey-path">Plano, TX &nbsp;·&nbsp; Open to Remote</span>
           </div>
           <h1 class="hero-name reveal reveal-delay-1">Aamir<br/>Ali</h1>
           <p class="hero-title reveal reveal-delay-2">
@@ -199,57 +198,40 @@
       <div class="about-grid">
 
         <div>
-          <div class="section-label reveal">
-            <span class="label-prompt">$</span>
-            <span class="label-cmd">cat</span>
-            <span class="label-arg">about.md</span>
-          </div>
-          <h2 class="section-title reveal reveal-delay-1">People first.<br/>Systems second.</h2>
-          <p class="section-subtitle reveal reveal-delay-2">
-            I got into healthcare by accident and stayed because I genuinely enjoy
-            helping people navigate hard moments.
-          </p>
+          <h2 class="section-title reveal">People first.<br/>Systems second.</h2>
 
-          <!-- Bio inside a terminal log panel -->
-          <div class="terminal-log-panel reveal reveal-delay-2">
-            <div class="log-panel-header">
-              <span class="log-panel-title">
-                <span class="lp-cmd">tail</span>
-                <span>&nbsp;-f&nbsp;</span>
-                <span class="lp-file">journey.log</span>
-              </span>
-              <span class="log-panel-status">STREAMING</span>
-            </div>
-            <div class="log-panel-body">
-              <p>
-                I started in recovery work — managing a sober living facility, helping residents
-                rebuild their lives after addiction. That experience shaped everything about how I
-                operate: I lead with empathy, I take accountability seriously, and I genuinely care
-                about the people I work with and for.
-              </p>
-              <p>
-                These days I'm running enrollment operations in pediatric behavioral health, building
-                the workflows that connect families to care. I love the problem-solving side of it —
-                <strong>there's always something broken that can be made better</strong>, and I can't
-                leave a busted process alone until it runs the way it should.
-              </p>
-              <p>
-                Outside of work I keep it pretty simple — working out at the gym, walking my dog
-                <strong>Casper</strong>, and enjoying good food around Dallas. I've been deep in the
-                AI rabbit hole for the past couple years and it's changed how I work completely —
-                I use it to move faster, cut the busywork, and focus on the stuff that actually matters.
-              </p>
-            </div>
+          <div class="bio-card reveal reveal-delay-1">
+            <p>
+              I've always been drawn to work that combines people, problem-solving, and impact.
+              I started in recovery services, managing a sober living home and helping residents
+              navigate major life transitions. That experience gave me a strong foundation in
+              leadership, empathy, and accountability — qualities that still shape how I work today.
+            </p>
+            <p>
+              Since then, I've grown into operations, enrollment, and customer-facing leadership
+              roles where I've worked closely with individuals, families, and cross-functional teams
+              to improve experiences and drive better outcomes. I'm at my best where service and
+              systems overlap — <strong>improving workflows, solving bottlenecks, and making complex
+              processes feel simpler and more human.</strong>
+            </p>
+            <p>
+              I'm also deeply interested in AI and automation, and I've spent the past few years
+              exploring ways to use modern tools to work more efficiently, reduce friction, and
+              build smarter systems. I enjoy learning quickly, experimenting with new technology,
+              and finding practical ways to make work better.
+            </p>
+            <p>
+              Outside of work, I enjoy spending time with my dog <strong>Casper</strong>, lifting
+              weights, and working on personal projects that challenge me to keep learning and
+              building.
+            </p>
           </div>
         </div>
 
         <div>
           <!-- Expertise Tags -->
           <div class="expertise-tags-section">
-            <div class="expertise-tags-label reveal">
-              <span class="etl-prompt">$</span>
-              &nbsp;ls ./skills/
-            </div>
+            <div class="expertise-tags-label reveal">Skills & Expertise</div>
             <div id="expertise-tags">
               <span class="exp-tag">Healthcare Operations</span>
               <span class="exp-tag">Behavioral Health</span>
@@ -306,17 +288,11 @@
     <div class="container">
 
       <div class="tools-header">
-        <div class="section-label reveal">
-          <span class="label-prompt">$</span>
-          <span class="label-cmd">apt</span>
-          <span class="label-arg">list --installed</span>
-        </div>
-        <h2 class="section-title reveal reveal-delay-1">AI & Automation<br/>in my daily stack.</h2>
-        <p class="section-subtitle reveal reveal-delay-2">
+        <h2 class="section-title reveal">AI & Automation<br/>in my daily stack.</h2>
+        <p class="section-subtitle reveal reveal-delay-1">
           These aren't just tools I've heard of — they're in my active workflow. I use
           them to get more done, move faster, and build things that used to require a whole team.
         </p>
-        <div class="tools-cmd-output reveal reveal-delay-2">Listing installed packages — 8 packages found.</div>
       </div>
 
       <div class="tools-grid">
@@ -411,12 +387,7 @@
 
       <div class="projects-header">
         <div>
-          <div class="section-label reveal">
-            <span class="label-prompt">$</span>
-            <span class="label-cmd">ps</span>
-            <span class="label-arg">aux --projects</span>
-          </div>
-          <h2 class="section-title reveal reveal-delay-1">Active<br/>Processes</h2>
+          <h2 class="section-title reveal">Projects</h2>
         </div>
         <p class="section-subtitle reveal reveal-delay-2">
           Real problems. Real solutions. Each project is something I built or a workflow
@@ -443,23 +414,11 @@
       <div class="contact-grid">
 
         <div>
-          <div class="section-label reveal">
-            <span class="label-prompt">$</span>
-            <span class="label-cmd">ping</span>
-            <span class="label-arg">aamir.local</span>
-          </div>
-          <h2 class="section-title reveal reveal-delay-1">Let's connect<br/>and build.</h2>
-          <p class="section-subtitle reveal reveal-delay-2">
+          <h2 class="section-title reveal">Let's connect<br/>and build.</h2>
+          <p class="section-subtitle reveal reveal-delay-1">
             Whether you need a custom dashboard, an automation that saves your team hours,
             an internal tool, or just want to talk operations — I'm happy to chat.
           </p>
-
-          <div class="contact-ssh-line reveal reveal-delay-2">
-            <span class="ssh-prompt">$</span>&nbsp;
-            <span class="ssh-cmd">ssh</span>&nbsp;
-            <span class="ssh-arg">aamir@collaborate</span>
-            <span class="ssh-cursor"></span>
-          </div>
 
           <div class="contact-info">
             <a href="mailto:aamirali1211@gmail.com" class="contact-item reveal reveal-delay-2">
@@ -510,30 +469,21 @@
           <input type="hidden" name="from_name" value="Portfolio Contact Form" />
           <input type="checkbox" name="botcheck" style="display:none" />
 
-          <div class="form-prompt-header">
-            <span class="fph-prompt">$</span>&nbsp;
-            <span class="fph-cmd">./send-message.sh</span>
-          </div>
+          <div class="form-prompt-header">Send a Message</div>
 
           <div class="form-group">
-            <label class="form-label" for="name">
-              <span class="fl-prompt">→</span>&nbsp;<span class="fl-var">$NAME</span>
-            </label>
+            <label class="form-label" for="name">Your Name</label>
             <input class="form-input" type="text" id="name" name="name" placeholder="your name" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="email">
-              <span class="fl-prompt">→</span>&nbsp;<span class="fl-var">$EMAIL</span>
-            </label>
+            <label class="form-label" for="email">Your Email</label>
             <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="message">
-              <span class="fl-prompt">→</span>&nbsp;<span class="fl-var">$MESSAGE</span>
-            </label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="what are you working on? how can I help?" required></textarea>
+            <label class="form-label" for="message">Your Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="What are you working on? How can I help?" required></textarea>
           </div>
-          <button type="submit" class="btn-primary">./send →</button>
+          <button type="submit" class="btn-primary">Send Message →</button>
         </form>
 
       </div>
@@ -544,10 +494,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-copy">
-          <span class="fc-prompt">$</span>&nbsp;
-          echo "© 2026 Aamir Ali. Built with intention."
-        </span>
+        <span class="footer-copy">© 2026 Aamir Ali. Built with intention.</span>
         <nav class="footer-links">
           <a href="#about">About</a>
           <a href="#tools">AI & Automation</a>
@@ -563,8 +510,6 @@
     <span class="key">1</span>–<span class="key">5</span> to navigate
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.halo.min.js"></script>
   <script src="js/terminal.js"></script>
   <script src="js/projects.js"></script>
   <script src="js/cursor.js"></script>

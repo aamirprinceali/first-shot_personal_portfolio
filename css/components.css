@@ -25,6 +25,28 @@
 body.cursor-hover #cursor-dot  { width: 8px; height: 8px; }
 body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(124, 111, 255, 0.6); }
 
+/* ─── Bio Card (About section) ────────────────────────── */
+.bio-card {
+  background: rgba(5, 5, 14, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(124, 111, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-top: 24px;
+}
+
+.bio-card p {
+  font-size: 14px;
+  line-height: 1.82;
+  color: var(--text-2);
+  margin-bottom: 16px;
+}
+
+.bio-card p:last-child { margin-bottom: 0; }
+
+.bio-card strong { color: var(--text); font-weight: 600; }
+
 /* ─── Glass utility ───────────────────────────────────── */
 .glass {
   background: rgba(5, 5, 14, 0.6);
@@ -1664,7 +1686,7 @@ footer {
 
 @media print {
   #nav, #cursor-dot, #cursor-ring, #grain, #scroll-progress,
-  #keyboard-hint, #vanta-bg { display: none !important; }
+  #keyboard-hint, #space-canvas { display: none !important; }
   html, body { background: white !important; color: #111 !important; }
   .cv-name { -webkit-text-fill-color: #111 !important; background: none !important; }
   .cv-action-btn { display: none !important; }
