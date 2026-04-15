@@ -41,6 +41,7 @@
   --container-padding: clamp(20px, 5vw, 60px);
 
   /* ── Shape ──────────────────────────────────────── */
+  --radius:    12px;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
