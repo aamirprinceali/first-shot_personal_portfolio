@@ -1,167 +1,113 @@
 # portfolio-site — Session Handoff
-
-**Branch:** space-final  
-**Last updated:** 2026-04-16
+**Branch:** space-final | **Last updated:** 2026-04-18
+**GitHub:** https://github.com/aamirprinceali/first-shot_personal_portfolio
 
 ---
 
 ## What This Site Is
-Aamir's space/constellation themed portfolio. The "Full Experience" side. Audience: creatives, tech builders, curious people. Recruiters get a separate site (portfolio-minimal).
-
-**Run:** Open `index.html` directly in browser — no build step.
+Aamir's space/constellation themed portfolio. The "Full Experience" version.  
+Audience: creatives, tech builders, curious people.  
+Run: `open index.html` — no build step, plain HTML/CSS/JS.
 
 ---
 
 ## Current State — What's Built and Working
 
-### Complete Features
-- Custom HTML5 Canvas constellation system (`js/space-bg.js`) — 5 named constellations, each maps to a section. Constellations activate/fade as user scrolls.
-- Terminal intro (`js/terminal.js`) — boot screen with typing effect, skip button, `sessionStorage.setItem('intro-seen', '1')` on close
-- Hero animations (`js/hero.js`):
-  - Scramble-decode on "Aamir Ali" (fires after terminal closes)
-  - Cursor parallax on neofetch card
-  - Progress bars animate in with glow pulse (values: AI Tools 92%, Automation 91%, Healthcare 93%, Ops Design 96%)
-- Section dividers glow when user scrolls near them, colored to their constellation
-- Tool cards: left purple accent bar, hover lift
-- Project cards: left green accent bar, hover lift
-- Process step cards (work-with-me.html): left accent bar, hover lift
-- Full SEO: meta tags, OG, Twitter cards, JSON-LD structured data
-- `favicon.svg` — constellation icon
-- `robots.txt` + `sitemap.xml`
-- About me text: final approved version (4 paragraphs)
-- All section `$ command` labels REMOVED
-- Nav logo: clean "Aamir Ali" (no terminal prompt styling)
-- Contact form: Web3Forms key `61182368-6cdc-4631-9ac8-be2a5293d520`
+### Core features
+- **Custom canvas constellation system** (`js/space-bg.js`) — 5 named constellations, each maps to a section. Constellations activate/fade as user scrolls.
+- **Terminal intro** (`js/terminal.js`) — "ENCRYPTED FILE DETECTED / DECODING FILE" theme. Skip with any key. `sessionStorage('intro-seen')` prevents replay same session.
+- **Hero animations** (`js/hero.js`) — scramble-decode on "Aamir Ali" after terminal closes, cursor parallax on neofetch card, progress bars animate in with glow
+- **Nav active section highlight** — nav link glows for the section currently in view (main.js IntersectionObserver)
+- **3D card tilt** — tool, project, service cards tilt toward cursor on hover (main.js)
+- **Section dividers** — glow when user scrolls near them, colored to their constellation
+- **Comets** — max 3 at once, spawn frequently, purple-white tint, long trails. Visible within ~10–20 seconds of browsing.
+- **Full SEO** — meta, OG, Twitter cards, JSON-LD structured data
+- **favicon.svg** — constellation icon
+- **robots.txt + sitemap.xml**
 
-### Files
+### Contact / functional
+- **Contact form** — Web3Forms key `61182368-6cdc-4631-9ac8-be2a5293d520` (NOTE: form submissions not yet tested to inbox — verify this works)
+- **Calendly links** — placeholder `https://calendly.com/aamir-ali` in index.html (hero) and work-with-me.html (15min + 30min buttons). **Replace with real Calendly URL.**
+- **Resume download** — `aamir-ali-resume.pdf` in portfolio-site root. **Drop the file in — it doesn't exist yet.** Button is already wired.
+
+### Pages
+- `index.html` — Main portfolio (hero, about, tools, projects, contact)
+- `cv.html` — Full career timeline, education, certifications (Google AI certs now vertical list), download button
+- `work-with-me.html` — Services, process steps, Calendly booking
+
+### Nav structure (each page hides its own link — already correct)
+- index.html nav: About, AI & Automation, Projects, Work With Me, CV
+- cv.html nav: About, AI & Automation, Projects, Work With Me (no CV)
+- work-with-me.html nav: About, AI & Automation, Projects, CV (no Work With Me)
+
+### Design tokens (quick ref)
+```
+--bg: #030308  --text: #E2E2F0  --accent: #7C6FFF
+--green: #34D399  --font-sans: 'Space Grotesk'  --font-mono: 'JetBrains Mono'
+```
+
+---
+
+## Files Reference
 ```
 index.html, cv.html, work-with-me.html
 css/variables.css, reset.css, layout.css, components.css
 js/cursor.js, main.js, projects.js, terminal.js, hero.js, space-bg.js
+js/decode.js  ← EXISTS but NOT loaded in any HTML. Contains page transition
+              scramble-out effect. Available if you want to re-enable later.
 favicon.svg, robots.txt, sitemap.xml
+SESSION_HANDOFF.md  ← this file
 ```
 
 ---
 
-## What Still Needs To Be Built (This Chat)
+## What Still Needs To Be Done
 
-### 1. Terminal Intro — Update Text to "DECODING FILE"
-In `js/terminal.js`, update the boot sequence lines so the intro reads like it's decoding a file. Something like:
-```
-> INITIALIZING SECURE TERMINAL...
-> DECODING FILE: aamir_ali.profile
-> CLEARANCE VERIFIED
-> LOADING...
-```
-Keep the same timing/animation structure, just update the text strings.
+### Must do before launch
+- [ ] **Drop in resume PDF** — name it `aamir-ali-resume.pdf`, place in portfolio-site root
+- [ ] **Update Calendly URL** — search `calendly.com/aamir-ali` in index.html and work-with-me.html, replace with real link
+- [ ] **Test contact form** — submit a test message and confirm it arrives at aamirali1211@gmail.com. Web3Forms should work but hasn't been verified this session.
+- [ ] **Add "Switch to Professional" link** — subtle footer/nav link pointing to portfolio-minimal URL (once that site is deployed)
+- [ ] **Deploy to GitHub Pages** — merge space-final → main, enable Pages in GitHub repo settings. Use custom domain once registered.
 
-### 2. Sitewide Decode Effect on Navigation
-When the user clicks a nav link or the page loads, all major headings (`.section-title`, `h1`, `h2`) should scramble-decode in. Re-use the same `scrambleDecode()` function from `js/hero.js`.
-
-Implementation plan:
-- On `DOMContentLoaded`, call `scrambleDecode()` on all targeted headings with staggered delays
-- Headings already visible in viewport decode first
-- Headings below the fold decode when they enter viewport (IntersectionObserver)
-- The scramble chars: `'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234#@✦·'`
-- Same `FRAMES_PER_CHAR = 7`, `INTERVAL_MS = 35` settings as hero.js
-- This makes the ENTIRE SITE feel like it was encrypted and is being unlocked as you explore it
-
-### 3. "Switch to Professional Cut" Button
-Add a subtle link somewhere on all 3 pages (probably footer or nav) that says:
-- "See the Professional Cut →" or "Professional Version →"
-- Links directly to portfolio-minimal URL (update once that site is deployed)
-- On space site: subtle styling — `--text-2` color, no glow, feels like a footnote
-
-### 4. Redirect Rule for cv.html and work-with-me.html
-If someone lands directly on `cv.html` or `work-with-me.html` without having seen the terminal intro, redirect them to `index.html` so the full intro plays.
-
-Add at the TOP of `<head>` in cv.html and work-with-me.html:
-```html
-<script>
-  if (!sessionStorage.getItem('intro-seen')) {
-    window.location.replace('index.html');
-  }
-</script>
-```
-
-Note: `sessionStorage` (not localStorage) — this clears when the tab closes so every new visit gets the intro.
+### Nice to have (post-launch)
+- [ ] OG preview image (`og-image.png`) — 1200×630px image for social sharing previews
+- [ ] Calendly — consider embedding inline widget on work-with-me.html instead of just a link
+- [ ] Constellation tooltips on hover — small label showing constellation name
+- [ ] Animated stat counters (years, projects, etc.) in About section
 
 ---
 
-## Scramble Decode Function (canonical version from hero.js)
+## Three-Site Architecture (big picture)
+Aamir has 3 portfolio properties:
+
+| Site | Repo | Purpose |
+|------|------|---------|
+| **Space portfolio** (this one) | `first-shot_personal_portfolio` branch `space-final` | Creative/tech audience, full experience |
+| **Minimal portfolio** | `portfolio-minimal` | Recruiter/corporate audience, Fortune/Bloomberg editorial aesthetic |
+| **Gateway page** | `portfolio-gateway` | Optional choice page, shared intentionally — not linked from either site |
+
+Each site links directly to the other (not through the gateway). Gateway is a standalone shareable link.
+
+---
+
+## Scramble-Decode Function (hero.js — canonical version)
 ```js
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234#@✦·';
-const FRAMES_PER_CHAR = 7;
-const INTERVAL_MS = 35;
-
 function scrambleDecode(el) {
-  const target = el.textContent;
-  let frame = 0;
-  const total = target.length * FRAMES_PER_CHAR;
-  const id = setInterval(() => {
-    const resolved = Math.floor(frame / FRAMES_PER_CHAR);
-    el.textContent = target.split('').map((ch, i) => {
-      if (i < resolved) return ch;
-      return CHARS[Math.floor(Math.random() * CHARS.length)];
-    }).join('');
-    if (++frame >= total) { el.textContent = target; clearInterval(id); }
-  }, INTERVAL_MS);
+  // walks text nodes, randomly resolves characters over ~880ms
+  // see js/hero.js and js/decode.js for full implementation
 }
 ```
 
----
-
-## Written-Out (Clip-Path Reveal) Effect — for Gateway + Minimal Site
-This is what the GATEWAY page will use on the professional side, and what portfolio-minimal should use for chapter headers:
-
-**Plain CSS (for gateway):**
+## Written-Out Effect (for gateway + minimal site reference)
 ```css
-.write-on {
-  clip-path: inset(0 100% 0 0);
-  animation: writeOn var(--duration, 0.8s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-@keyframes writeOn {
-  to { clip-path: inset(0 0% 0 0); }
-}
-/* Stagger with animation-delay on each element */
+/* Plain CSS (gateway): */
+.write-on { clip-path: inset(0 100% 0 0); transition: clip-path 0.7s cubic-bezier(0.16,1,0.3,1); }
+.write-on.revealed { clip-path: inset(0 0% 0 0); }
+
+/* Framer Motion (portfolio-minimal React): */
+// initial={{ clipPath: "inset(0 100% 0 0)" }}
+// animate={{ clipPath: "inset(0 0% 0 0)" }}
+// transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
 ```
-
-**Framer Motion (for portfolio-minimal React):**
-```jsx
-<motion.div
-  initial={{ clipPath: "inset(0 100% 0 0)" }}
-  animate={{ clipPath: "inset(0 0% 0 0)" }}
-  transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
->
-  Chapter Title
-</motion.div>
-```
-
----
-
-## Gateway Site (Separate Chat/Repo)
-- Repo: `~/Desktop/dev/portfolio-gateway` (GitHub: aamirprinceali/portfolio-gateway)
-- Standalone — not linked from space site, not embedded in minimal site
-- Aamir shares this URL intentionally when he wants someone to choose
-- CLAUDE.md in that folder has the full design brief for building it
-
----
-
-## Design Tokens (quick reference)
-```css
---bg: #030308   --text: #E2E2F0   --accent: #7C6FFF
---green: #34D399   --amber: #FBBF24
---font-sans: 'Space Grotesk'   --font-mono: 'JetBrains Mono'
-```
-
----
-
-## Not Yet Done (Lower Priority)
-- Animated stat counters in About section
-- "Currently Building" ticker strip under hero
-- Constellation name tooltips on hover
-- OG preview image
-- Calendly embed (Aamir will provide link)
-- Domain registration + DNS setup
-- GitHub Pages go-live (merge space-final → main, enable Pages)
-- Google Search Console submission
