@@ -113,6 +113,12 @@
   border-color: rgba(124, 111, 255, 0.2);
 }
 
+.nav-links a.nav-active {
+  color: var(--text);
+  background: rgba(124, 111, 255, 0.12);
+  border-color: rgba(124, 111, 255, 0.3);
+}
+
 /* Status badge */
 .nav-badge {
   display: flex;

@@ -152,16 +152,16 @@
 
   // ── Shooting stars ─────────────────────────────────────────────────────────
   function spawnShooter() {
-    if (shooters.length < 2 && Math.random() < 0.0025) {
+    if (shooters.length < 3 && Math.random() < 0.006) {
       const left = Math.random() < 0.55;
       shooters.push({
-        x:     left ? 0.05 + Math.random() * 0.25 : 0.65 + Math.random() * 0.28,
-        y:     0.03 + Math.random() * 0.38,
-        vx:    (left ? 1 : -1) * (Math.random() * 0.0038 + 0.0025),
-        vy:    Math.random() * 0.0018 + 0.0008,
+        x:     left ? 0.04 + Math.random() * 0.3 : 0.58 + Math.random() * 0.32,
+        y:     0.02 + Math.random() * 0.42,
+        vx:    (left ? 1 : -1) * (Math.random() * 0.004 + 0.003),
+        vy:    Math.random() * 0.002 + 0.0008,
         a:     1,
-        decay: Math.random() * 0.007 + 0.005,
-        len:   35 + Math.random() * 45
+        decay: Math.random() * 0.006 + 0.004,
+        len:   50 + Math.random() * 65
       });
     }
   }
@@ -173,10 +173,11 @@
       const x1 = s.x * W, y1 = s.y * H;
       const dx = s.vx * s.len, dy = s.vy * s.len;
       const g = ctx.createLinearGradient(x1, y1, x1 - dx * W, y1 - dy * H);
-      g.addColorStop(0, `rgba(255,255,255,${s.a})`);
+      g.addColorStop(0, `rgba(220,215,255,${s.a})`);
+      g.addColorStop(0.4, `rgba(255,255,255,${s.a * 0.6})`);
       g.addColorStop(1, 'rgba(255,255,255,0)');
       ctx.strokeStyle = g;
-      ctx.lineWidth = 1.3;
+      ctx.lineWidth = 1.8;
       ctx.beginPath();
       ctx.moveTo(x1, y1);
       ctx.lineTo(x1 - dx * W, y1 - dy * H);

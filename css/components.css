@@ -1061,6 +1061,19 @@ body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: rgba(1
   background: rgba(124, 111, 255, 0.07);
 }
 
+/* Featured contact item (Book a Call) — slightly more prominent */
+.contact-item--featured {
+  border-color: rgba(124, 111, 255, 0.22);
+  background: rgba(124, 111, 255, 0.06);
+}
+.contact-item--featured .contact-item-label {
+  color: var(--accent-mid);
+}
+.contact-item--featured:hover {
+  border-color: rgba(124, 111, 255, 0.45);
+  background: rgba(124, 111, 255, 0.12);
+}
+
 .contact-item-icon {
   font-size: 14px;
   width: 36px; height: 36px;
@@ -1221,7 +1234,7 @@ footer {
 .reveal-delay-4        { transition-delay: 0.32s; }
 
 /* ─── Career Timeline (CV page) ───────────────────────── */
-.timeline-section { border-top: 1px solid rgba(255,255,255,0.04); }
+.timeline-section { border-top: 1px solid rgba(255,255,255,0.04); padding-top: 28px; }
 
 .timeline-intro-text {
   font-size: 14px;
@@ -1346,7 +1359,7 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  margin-bottom: 64px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
 }
 
@@ -1791,6 +1804,13 @@ footer {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.calendar-cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* ─── Responsive ──────────────────────────────────────── */

@@ -112,6 +112,56 @@ if (dividers.length) {
   dividers.forEach(d => divObserver.observe(d));
 }
 
+// ─── 3D Tilt on Cards ────────────────────────────────
+// Cards tilt slightly toward the cursor on hover — subtle depth effect.
+const tiltCards = document.querySelectorAll('.tool-card, .project-card, .service-card');
+tiltCards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.08s ease, box-shadow var(--t-base), border-color var(--t-base)';
+  });
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5; // -0.5 to 0.5
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform = `perspective(700px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg) translateZ(6px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform 0.45s var(--ease-out), box-shadow var(--t-base), border-color var(--t-base)';
+    card.style.transform = '';
+  });
+});
+
+// ─── Nav Active Section Highlight ────────────────────
+// Lights up the nav link matching whichever section is currently
+// in the main reading area. Also marks page links active on cv/work-with-me.
+const navLinkEls = document.querySelectorAll('.nav-links a');
+
+// On cv.html / work-with-me.html — mark the matching page link active
+const currentPage = window.location.pathname.split('/').pop();
+navLinkEls.forEach(a => {
+  const href = a.getAttribute('href');
+  if (href === currentPage) a.classList.add('nav-active');
+});
+
+// On index.html — track scroll position and highlight matching anchor link
+const sectionIds = ['hero', 'about', 'tools', 'projects', 'contact'];
+const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+if (sectionEls.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinkEls.forEach(a => {
+        a.classList.toggle('nav-active', a.getAttribute('href') === `#${id}`);
+      });
+    });
+  // rootMargin: top -40% means section must be past 40% down the screen to activate
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sectionEls.forEach(el => sectionObserver.observe(el));
+}
+
 // ─── Keyboard Hint Auto-hide ──────────────────────────
 const hint = document.getElementById('keyboard-hint');
 if (hint) {
