@@ -126,18 +126,20 @@ function renderProjects() {
     </div>
   `}).join('');
 
-  // Re-observe new cards for reveal animation
-  grid.querySelectorAll('.reveal').forEach((el) => {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    obs.observe(el);
-  });
+  // Reveal animation — GSAP handles it if available (animations.js), else fallback
+  if (typeof gsap === 'undefined') {
+    grid.querySelectorAll('.reveal').forEach((el) => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      obs.observe(el);
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', renderProjects);

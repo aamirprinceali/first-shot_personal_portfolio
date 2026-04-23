@@ -32,9 +32,9 @@
   }
   animateRing();
 
-  // Hover state
+  // Hover state — project-card and tool-card excluded (no magnetic pull on cards)
   const magneticEls = document.querySelectorAll(
-    'a, button, .project-card, .tool-card, .contact-item, .highlight-item, .btn-primary, .btn-secondary'
+    'a, button, .contact-item, .highlight-item, .btn-primary, .btn-secondary'
   );
 
   magneticEls.forEach((el) => {

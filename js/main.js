@@ -113,8 +113,8 @@ if (dividers.length) {
 }
 
 // ─── 3D Tilt on Cards ────────────────────────────────
-// Cards tilt slightly toward the cursor on hover — subtle depth effect.
-const tiltCards = document.querySelectorAll('.tool-card, .project-card, .service-card');
+// Tool and service cards tilt slightly on hover. Project cards excluded (caused gravity feel).
+const tiltCards = document.querySelectorAll('.tool-card, .service-card');
 tiltCards.forEach(card => {
   card.addEventListener('mouseenter', () => {
     card.style.transition = 'transform 0.08s ease, box-shadow var(--t-base), border-color var(--t-base)';
